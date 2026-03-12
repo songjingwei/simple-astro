@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "figma": {
+      "type": "streamableHttp",
+      "url": "https://mcp.figma.com/mcp",
+      "headers": {
+        "Authorization": "Bearer $FIGMA_OAUTH_TOKEN",
+        "X-Figma-Region": "us-east-1"
+      }
+    }
+  }
+}
