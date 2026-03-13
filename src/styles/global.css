@@ -931,6 +931,8 @@ body {
   position: relative;
   justify-content: flex-start;
   padding-top: 72px;
+  padding-left: 0;
+  padding-right: 0;
   padding-bottom: 0;
 }
 
@@ -939,30 +941,218 @@ body {
   z-index: 1;
 }
 
+.feature-preview-card-cdkey {
+  --cdkey-graphics-offset-y: -8px;
+  --cdkey-box-width: 230px;
+  position: relative;
+  justify-content: flex-start;
+  padding-top: 64px;
+  overflow: hidden;
+}
+
+.feature-preview-card-cdkey .feature-card-title {
+  margin-top: 0;
+}
+
+.feature-preview-card-cdkey .feature-card-desc {
+  width: 272px;
+}
+
+.feature-card-cdkey-boxes {
+  --cdkey-box-height: 86px;
+  --cdkey-box-gap: 16px;
+  --cdkey-box-half-width: 115px;
+  --cdkey-stack-height: calc((var(--cdkey-box-height) * 2) + var(--cdkey-box-gap));
+  --cdkey-top-connector-inset: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--cdkey-box-gap);
+  margin-top: 62px;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  transform: translateY(var(--cdkey-graphics-offset-y));
+}
+
+.feature-card-cdkey-link {
+  position: absolute;
+  /* 让竖线从第一盒底边连到第二盒顶边，严格按 86/16/17 对齐 */
+  top: calc(var(--cdkey-box-height) - 0.5px);
+  width: 1px;
+  height: 17px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.feature-card-cdkey-link-left {
+  left: calc(50% - 42px);
+}
+
+.feature-card-cdkey-link-right {
+  left: calc(50% + 42px);
+}
+
+.feature-card-cdkey-connector {
+  position: absolute;
+  top: 176.5px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.feature-card-cdkey-connector-left {
+  left: calc(50% - var(--cdkey-box-half-width) - 119px + var(--cdkey-top-connector-inset));
+  top: -48.5px;
+  width: 120px;
+  height: 49px;
+}
+
+.feature-card-cdkey-connector-right {
+  left: calc(50% + var(--cdkey-box-half-width) - 0.5px - var(--cdkey-top-connector-inset));
+  top: -48.5px;
+  width: 119px;
+  height: 49px;
+}
+
+.feature-card-cdkey-connector-bottom-left {
+  left: calc(50% - var(--cdkey-box-half-width) - 119px + var(--cdkey-top-connector-inset));
+  top: calc(var(--cdkey-stack-height) - 0.5px);
+  width: 120px;
+  height: 49px;
+  bottom: auto;
+}
+
+.feature-card-cdkey-connector-bottom-right {
+  left: calc(50% + var(--cdkey-box-half-width) - 0.5px - var(--cdkey-top-connector-inset));
+  top: calc(var(--cdkey-stack-height) - 0.5px);
+  width: 119px;
+  height: 49px;
+  bottom: auto;
+}
+
+.feature-card-cdkey-box {
+  width: 230px;
+  height: 86px;
+  box-sizing: border-box;
+  border-radius: 22px;
+  border: 1px solid rgba(186, 215, 245, 0.14);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.03);
+  z-index: 1;
+}
+
+.feature-card-cdkey-box::before,
+.feature-card-cdkey-box::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 76px;
+  height: 1px;
+  background: rgba(186, 215, 245, 0.14);
+  transform: translateY(-0.5px);
+  pointer-events: none;
+}
+
+.feature-card-cdkey-box::before {
+  left: -76px;
+}
+
+.feature-card-cdkey-box::after {
+  right: -76px;
+}
+
+.feature-card-cdkey-inner-box {
+  width: 206px;
+  height: 62px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(186, 215, 245, 0.25) 0%, rgba(86, 92, 97, 0.25) 100%);
+  box-shadow: 0 3px 8px 0 rgba(255, 255, 255, 0.10) inset;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.feature-card-cdkey-inner-box svg {
+  position: absolute;
+  display: block;
+  flex-shrink: 0;
+}
+
+.feature-card-cdkey-icon-en {
+  width: 128px;
+  height: 46px;
+  top: 15.5px;
+  left: 43.6px;
+}
+
+.feature-card-cdkey-icon-zh {
+  width: 159px;
+  height: 41px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.feature-card-cdkey-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #d9d9d9;
+  pointer-events: none;
+}
+
+.feature-card-cdkey-dot-tl {
+  top: 19px;
+  left: 19px;
+}
+
+.feature-card-cdkey-dot-tr {
+  top: 19px;
+  right: 19px;
+}
+
+.feature-card-cdkey-dot-bl {
+  bottom: 19px;
+  left: 19px;
+}
+
+.feature-card-cdkey-dot-br {
+  bottom: 19px;
+  right: 19px;
+}
+
 .feature-card-games-box {
   position: relative;
   margin-top: 22px;
-  width: 849px;
+  width: 382px;
   height: 288px;
   box-sizing: border-box;
-  background: rgba(186, 215, 245, 0.05);
+  background: none;
   flex-shrink: 0;
   align-self: center;
   overflow: hidden;
-  padding-top: 16px;
-  isolation: isolate;
+  padding: 17px 0 0 0;
   -webkit-mask-image: linear-gradient(
     to right,
-    transparent 0%,
-    black 20%,
-    black 80%,
+    transparent 0px,
+    black 60px,
+    black calc(100% - 60px),
     transparent 100%
   );
   mask-image: linear-gradient(
     to right,
-    transparent 0%,
-    black 20%,
-    black 80%,
+    transparent 0px,
+    black 60px,
+    black calc(100% - 60px),
     transparent 100%
   );
 }
@@ -970,28 +1160,39 @@ body {
 .feature-card-games-box::before {
   content: "";
   position: absolute;
-  inset: 0;
-  padding: 1px;
-  box-sizing: border-box;
-  background: conic-gradient(
-    from 46deg at 50% 50%,
-    rgba(186, 215, 245, 0.20) 0.9647899121046066deg,
-    rgba(186, 215, 245, 0.10) 84.8747706413269deg,
-    rgba(186, 215, 245, 0.00) 173.84146571159363deg,
-    rgba(186, 215, 245, 0.10) 271.45249128341675deg,
-    rgba(186, 215, 245, 0.20) 306.00000858306885deg,
-    rgba(255, 255, 255, 0.50) 338.3999991416931deg
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(186, 215, 245, 0.30) 30%,
+    rgba(255, 255, 255, 0.50) 50%,
+    rgba(186, 215, 245, 0.30) 70%,
+    transparent 100%
   );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
   pointer-events: none;
   z-index: 3;
 }
 
 .feature-card-games-box::after {
-  content: none;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(186, 215, 245, 0.30) 30%,
+    rgba(255, 255, 255, 0.50) 50%,
+    rgba(186, 215, 245, 0.30) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 3;
 }
 
 .feature-card-games-marquees {
@@ -1006,39 +1207,22 @@ body {
 
 .feature-card-games-marquee {
   width: 100%;
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent 0px,
-    black 180px,
-    black calc(100% - 180px),
-    transparent 100%
-  );
-  mask-image: linear-gradient(
-    to right,
-    transparent 0px,
-    black 180px,
-    black calc(100% - 180px),
-    transparent 100%
-  );
 }
 
 .feature-card-games-marquee-row1 {
-  transform: translateX(-18px);
 }
 
 .feature-card-games-marquee-row2 {
-  transform: translateX(12px);
 }
 
 .feature-card-games-marquee-row3 {
-  transform: translateX(-26px);
 }
 
 .feature-card-games-image-wrap {
   width: 168px;
   height: 79px;
   overflow: hidden;
-  background: rgba(186, 215, 245, 0.06);
+  background: none;
   flex-shrink: 0;
 }
 
@@ -1051,22 +1235,40 @@ body {
 
 .feature-card-games-fade-left,
 .feature-card-games-fade-right {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 200px;
-  z-index: 2;
-  pointer-events: none;
+  display: none;
 }
 
-.feature-card-games-fade-left {
-  left: 0;
-  background: linear-gradient(to right, #09090b 0%, transparent 100%);
+.faq-section {
+  margin-top: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.feature-card-games-fade-right {
-  right: 0;
-  background: linear-gradient(to left, #09090b 0%, transparent 100%);
+.faq-title {
+  margin: 0;
+  text-align: center;
+  text-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+  font-family: Gilroy, system-ui, sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+  background: linear-gradient(93deg, #FAFAFA 24.45%, #A1A1AA 73.78%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.faq-subtitle {
+  margin: 20px 0 0;
+  color: #86868B;
+  text-align: center;
+  font-family: MiSans, system-ui, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 330;
+  line-height: normal;
 }
 
 .compat-setting-title {
@@ -1299,6 +1501,7 @@ body {
   display: flex;
   flex-shrink: 0;
   gap: var(--gap);
+  min-width: max-content;
   animation: marquee var(--duration) linear infinite;
 }
 
