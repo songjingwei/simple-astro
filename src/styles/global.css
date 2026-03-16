@@ -163,20 +163,26 @@ body {
   justify-content: center;
   align-items: center;
   position: absolute;
-  left: 568px;
-  top: 212px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   box-sizing: border-box;
   z-index: 3;
+  border: 0;
+  padding: 0;
+  background: transparent;
   cursor: pointer;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .hero-video-play-btn.is-playing {
   opacity: 0;
+  pointer-events: none;
 }
 
-.hero-video-play-btn:hover {
-  opacity: 1 !important;
+.hero-video-container:hover .hero-video-play-btn.is-playing {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .hero-video-play-btn-inner {
@@ -389,7 +395,6 @@ body {
 }
 
 .steam-hours-card {
-  width: 140px;
   height: 48px;
   border-radius: 10px;
   border: 1px solid rgba(186, 215, 245, 0.10);
@@ -398,11 +403,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 3px;
 }
 
 .steam-hours-inner {
-  width: 134px;
   height: 42px;
+  padding: 0 15px;
+  box-sizing: border-box;
   border-radius: 8px;
   border: 1px solid rgba(186, 215, 245, 0.10);
   background: linear-gradient(180deg, rgba(186, 215, 245, 0.15) 0%, rgba(109, 125, 143, 0.15) 100%);
@@ -422,6 +429,7 @@ body {
   line-height: 24px;
   letter-spacing: 1.5px;
 }
+
 
 .steam-data-card {
   width: 468px;
@@ -2089,16 +2097,15 @@ body {
 
 .showcase-sparkles {
   position: absolute;
-  bottom: calc(100% - 80px);
+  bottom: calc(100% - 2px);
   left: 50%;
-  width: 100%;
-  height: 500px;
+  width: 1280px;
+  max-width: 100%;
+  height: 164px;
   transform: translateX(-50%);
   pointer-events: none;
   z-index: 10;
   overflow: visible;
-  mask-image: linear-gradient(to top, transparent 0px, black 50px);
-  -webkit-mask-image: linear-gradient(to top, transparent 0px, black 50px);
 }
 
 .showcase-sparkles::before {
@@ -2107,13 +2114,21 @@ body {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 1400px;
-  height: 500px;
-  background: radial-gradient(ellipse at center bottom, rgba(178, 252, 255, 0.55) 0%, rgba(178, 252, 255, 0.25) 20%, rgba(178, 252, 255, 0.1) 40%, rgba(178, 252, 255, 0.03) 60%, transparent 75%);
-  filter: blur(50px);
+  width: 1000px;
+  height: 126px;
+  background: radial-gradient(
+    ellipse at center bottom,
+    rgba(146, 232, 238, 0.72) 0%,
+    rgba(146, 232, 238, 0.34) 35%,
+    rgba(146, 232, 238, 0.1) 65%,
+    transparent 100%
+  );
+  filter: blur(28px);
   pointer-events: none;
-  mask-image: linear-gradient(to top, black 0%, black 20%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.2) 65%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to top, black 0%, black 20%, rgba(0,0,0,0.6) 40%, rgba(0,0,0,0.2) 65%, transparent 100%);
+}
+
+.showcase-sparkles::after {
+  content: none;
 }
 
 .showcase-sparkles-line {
@@ -2156,14 +2171,27 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
+  opacity: 0.8;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.55) 20%,
+    #000 50%,
+    rgba(0, 0, 0, 0.55) 80%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.55) 20%,
+    #000 50%,
+    rgba(0, 0, 0, 0.55) 80%,
+    transparent 100%
+  );
 }
 
 .showcase-sparkles-mask {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(0deg, rgba(10, 10, 13, 0.08) 0%, rgba(10, 10, 13, 0.32) 44%, rgba(10, 10, 13, 0.88) 100%);
-  -webkit-mask-image: radial-gradient(350px 200px at bottom, transparent 20%, white 100%);
-  mask-image: radial-gradient(350px 200px at bottom, transparent 20%, white 100%);
+  display: none;
 }
 
 .hero-actions {

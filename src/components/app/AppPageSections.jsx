@@ -8,6 +8,7 @@ import LaserFlow from "@/components/LaserFlow"
 import { DownloadModal } from "@/components/app/DownloadModal"
 import { HeroHeadlineBlock } from "@/components/app/HeroHeadlineBlock"
 import { UserPopupCard } from "@/components/app/UserPopupCard"
+import { FlipNumber } from "@/components/app/FlipNumber"
 import { AppleIcon, BrandIcon, BrandTextIcon } from "@/components/app/icons"
 import {
   faqItems,
@@ -63,6 +64,7 @@ export function AppPageSections({
 }) {
   const [isPlaying, setIsPlaying] = useState(true)
   const videoRef = useRef(null)
+  const heroVideoSrc = "https://www.w3schools.com/html/mov_bbb.mp4"
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -158,16 +160,21 @@ export function AppPageSections({
               loop
               muted
               playsInline
-              src="https://www.w3schools.com/html/mov_bbb.mp4"
+              src={heroVideoSrc}
             />
-            <div className={`hero-video-play-btn ${isPlaying ? 'is-playing' : ''}`} onClick={togglePlay}>
-              <div className="hero-video-play-btn-inner">
+            <button
+              type="button"
+              className={`hero-video-play-btn ${isPlaying ? "is-playing" : ""}`}
+              onClick={togglePlay}
+              aria-label={isPlaying ? "暂停视频" : "播放视频"}
+            >
+              <span className="hero-video-play-btn-inner">
                 <VideoPlayBtnBgSvg />
-                <div className="hero-video-play-icon-wrapper">
+                <span className="hero-video-play-icon-wrapper">
                   {!isPlaying ? <VideoPlayIconSvg /> : <VideoPauseIconSvg />}
-                </div>
-              </div>
-            </div>
+                </span>
+              </span>
+            </button>
           </div>
         </div>
           </div>
@@ -232,7 +239,7 @@ export function AppPageSections({
             <div className="steam-data-card steam-data-card-small">
               <div className="steam-hours-card">
                 <div className="steam-hours-inner">
-                  <span className="steam-hours-value">{pageText.steam.cards.value}</span>
+                  <FlipNumber className="steam-hours-value" value={pageText.steam.cards.value} />
                 </div>
               </div>
               <span className="steam-data-card-label">{pageText.steam.cards.valueLabel}</span>
@@ -242,7 +249,7 @@ export function AppPageSections({
             <div className="steam-data-card steam-data-card-small">
               <div className="steam-hours-card">
                 <div className="steam-hours-inner">
-                  <span className="steam-hours-value">{pageText.steam.cards.hoursValue}</span>
+                  <FlipNumber className="steam-hours-value" value={pageText.steam.cards.hoursValue} />
                 </div>
               </div>
               <span className="steam-data-card-label">{pageText.steam.cards.hoursLabel}</span>
