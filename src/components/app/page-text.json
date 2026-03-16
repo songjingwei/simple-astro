@@ -1,0 +1,124 @@
+{
+  "header": {
+    "nav": ["版本介绍", "反馈体验", "功能前瞻"],
+    "downloadButton": "立即下载"
+  },
+  "hero": {
+    "title": "盖世游戏",
+    "headline": {
+      "en": "Mac",
+      "zh": "也可以是游戏机",
+      "subtitle": "客户端内测版本抢先体验开启"
+    },
+    "downloadButton": "立即下载",
+    "communityButton": "加入内测社群",
+    "caption": "本次内测仅支持 Mac M 系列芯片",
+    "showcase": {
+      "title": "畅玩 Windows 游戏",
+      "subtitle": "突破硬件设备局限性，在Mac 也能体验 Windows 3A 大作",
+      "cardLabel": "Mac 畅游3A游戏",
+      "banner": "打破壁垒 畅玩无界",
+      "bannerWord": "GAMEHUB"
+    }
+  },
+  "steam": {
+    "title": "Steam 多账号管理",
+    "subtitle": "Steam 账号互通，自动同步账号数据和云存档，续玩不脱节",
+    "syncDataTitle": "我们同步的 Steam 数据",
+    "cards": {
+      "countLabel": "游戏数量",
+      "valueLabel": "账号价值",
+      "value": "¥1967.7",
+      "hoursLabel": "游戏时长",
+      "hoursValue": "1967.7h",
+      "cloudLabel": "游戏云存档"
+    }
+  },
+  "compat": {
+    "title": "个性化兼容性方案",
+    "desc": "配置游戏专属模拟器兼容性方案，为玩家提供更极致的游戏体验",
+    "leftCard": {
+      "title": "通用配置",
+      "desc": "基于游戏特性与设备环境自主调优，拥有更高自由度、更可控的游戏体验。根据游戏特性与个人习惯进行深度自定义，拥有专属你的游玩体验",
+      "metalHud": {
+        "title": "MetalHUD",
+        "desc": "开启后在游戏中显示 Metal性能监控面板"
+      },
+      "avx": {
+        "title": "AVX加速",
+        "desc": "让Intel应用在M芯Mac上识别并启用AVX指令"
+      },
+      "env": {
+        "title": "环境变量",
+        "desc": "配置容器环境变量，适配特定程序需求"
+      },
+      "launchArgs": {
+        "title": "启动参数",
+        "desc": "添加程序启动参数，用于启用特定功能或解决兼容性问题"
+      },
+      "inputPlaceholder": "请输入参数",
+      "gamePath": {
+        "title": "游戏路径",
+        "desc": "设置您游戏的安装路径"
+      },
+      "language": {
+        "title": "语言",
+        "desc": "设置Windows系统语言"
+      }
+    },
+    "rightCard": {
+      "title": "兼容性方案",
+      "desc": "为不同游戏提供更灵活的兼容性方案，从默认可玩，到按你习惯去玩。兼顾游戏运行稳定性与性能表现，深度搭配更灵活的配置组合方案",
+      "plan": {
+        "title": "兼容性方案",
+        "desc": "官方方案或者您可以自定义选择"
+      },
+      "layer": {
+        "title": "兼容层",
+        "desc": "官方方案或者您可以自定义选择"
+      },
+      "syncMode": {
+        "title": "同步模式",
+        "desc": "选择 Wine 的同步机制，不同机制会影响程序的性能与兼容性"
+      },
+      "dinput": {
+        "title": "Dinput函数库",
+        "desc": "决定dinput.dll和dinput8.dll优先使用游戏自带或wine内置版本"
+      }
+    }
+  },
+  "survey": {
+    "title": "点击参与调研问卷",
+    "descPrefix": "下载体验盖世游戏 Mac 客户端，选择 Steam 下载或本地导入的方式游玩游戏。为了获取更真实的体验数据，",
+    "descHighlight": "建议累计游玩时长 > 20 分钟后再提交反馈。",
+    "descSuffix": "本次问卷预计需要 3 分钟，感谢您的参与！",
+    "button": "点击填写问卷"
+  },
+  "feature": {
+    "title": "功能前瞻",
+    "desc": "正式版即将推出更多功能，敬请期待",
+    "epic": {
+      "title": "Epic 多账号管理",
+      "desc": "快速切换 Epic 游戏资产，随时畅玩不同游戏库内容。"
+    },
+    "games": {
+      "title": "海量游戏点击即玩",
+      "desc": "即点即玩，无需安装，随时开启游戏体验。"
+    },
+    "platform": {
+      "title": "一站式游戏平台",
+      "desc": "解锁热门游戏激活码和租赁服务，全方位满足玩家多样需求，探索更多游戏内容"
+    }
+  },
+  "faq": {
+    "title": "常见问题",
+    "subtitle": "副标题",
+    "logoAlt": "盖世游戏",
+    "logoText": "盖世游戏",
+    "headline": {
+      "en": "Mac",
+      "zh": "也可以是游戏机",
+      "subtitle": "客户端内测版本抢先体验开启"
+    }
+  }
+}

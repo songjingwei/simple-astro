@@ -1,0 +1,15 @@
+@media (max-width: 1200px) {
+  .app-header {
+    padding: 0 72px;
+  }
+
+  .header-nav {
+    gap: 12px;
+    height: 52px;
+    padding: 0 20px;
+  }
+
+  .header-nav-item {
+    padding: 0 12px;
+  }
+}
