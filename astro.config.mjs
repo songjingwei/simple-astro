@@ -3,12 +3,16 @@ import react from '@astrojs/react';
 import { defineConfig } from 'astro/config';
 import { fileURLToPath } from 'node:url';
 
+import cloudflare from '@astrojs/cloudflare';
+
 // https://astro.build/config
 export default defineConfig({
   devToolbar: {
     enabled: false,
   },
+
   integrations: [react()],
+
   vite: {
     resolve: {
       alias: {
@@ -16,4 +20,6 @@ export default defineConfig({
       },
     },
   },
+
+  adapter: cloudflare(),
 });
