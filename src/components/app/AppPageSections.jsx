@@ -1,3 +1,4 @@
+import { useState, useRef } from "react"
 import { RainbowButton } from "@/registry/magicui/rainbow-button"
 import { ShowcaseSparkles } from "@/components/ShowcaseSparkles"
 import { CometCard } from "@/components/ui/comet-card"
@@ -43,11 +44,13 @@ import {
   EpicLogoSvg,
   FeaturePreviewGlowSvg,
   ShowcaseAppleOutlineSvg,
-  SurveyArcLineSvg,
   SurveyButtonBackgroundSvg,
   SurveyButtonSparkleSvg,
   SurveyGlowSvg,
   SurveyParticlesSvg,
+  VideoPauseIconSvg,
+  VideoPlayBtnBgSvg,
+  VideoPlayIconSvg,
 } from "@/components/app/AppPageSectionSvgs"
 
 export function AppPageSections({
@@ -58,6 +61,20 @@ export function AppPageSections({
   onCloseDownload,
   onToggleFaq,
 }) {
+  const [isPlaying, setIsPlaying] = useState(true)
+  const videoRef = useRef(null)
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.play()
+      }
+      setIsPlaying(!isPlaying)
+    }
+  }
+
   const renderFaqAnswer = (item) => {
     if (item.question !== "如何配置模拟器兼容性方案？") {
       return item.answer
@@ -87,8 +104,6 @@ export function AppPageSections({
 
   return (
     <main className="app" ref={appRef}>
-      {showDownload && <DownloadModal onClose={onCloseDownload} />}
-
       <header className="app-header">
         <div className="header-inner">
           <div className="header-brand">
@@ -132,9 +147,30 @@ export function AppPageSections({
           </button>
         </div>
         <p className="hero-caption">{pageText.hero.caption}</p>
-        <div className="hero-showcase">
+        <div className="hero-showcase-outer">
           <ShowcaseSparkles />
+          <div className="hero-showcase">
+          <div className="hero-video-container">
+            <video
+              ref={videoRef}
+              className="hero-video"
+              autoPlay
+              loop
+              muted
+              playsInline
+              src="https://www.w3schools.com/html/mov_bbb.mp4"
+            />
+            <div className={`hero-video-play-btn ${isPlaying ? 'is-playing' : ''}`} onClick={togglePlay}>
+              <div className="hero-video-play-btn-inner">
+                <VideoPlayBtnBgSvg />
+                <div className="hero-video-play-icon-wrapper">
+                  {!isPlaying ? <VideoPlayIconSvg /> : <VideoPauseIconSvg />}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+          </div>
         <div className="showcase-content">
           <h2 className="showcase-title">{pageText.hero.showcase.title}</h2>
           <p className="showcase-subtitle">
@@ -361,7 +397,6 @@ export function AppPageSections({
             <SurveyParticlesSvg />
           </div>
           <SurveyGlowSvg />
-          <SurveyArcLineSvg />
         </div>
       </section>
 

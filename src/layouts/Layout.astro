@@ -14,6 +14,37 @@ const { title = 'Astro Site' } = Astro.props;
   </head>
   <body>
     <slot />
+    <script>
+      function initReveal() {
+        const selectors = [
+          '.hero-title', '.hero-headline',
+          '.hero-subtitle', '.hero-caption',
+          '.showcase-title', '.showcase-subtitle',
+          '.steam-management-title', '.steam-management-subtitle',
+          '.steam-data-text',
+          '.compat-title', '.compat-desc', '.compat-card-title', '.compat-card-desc',
+          '.survey-title', '.survey-desc',
+          '.feature-preview-title', '.feature-preview-desc',
+          '.feature-card-title', '.feature-card-desc',
+          '.faq-title', '.faq-subtitle', '.faq-bottom-logo-text',
+        ];
+        const els = document.querySelectorAll(selectors.join(','));
+        if (els.length === 0) {
+          requestAnimationFrame(initReveal);
+          return;
+        }
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((e) => {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-revealed');
+              observer.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        els.forEach((el) => observer.observe(el));
+      }
+      initReveal();
+    </script>
   </body>
 </html>
 
