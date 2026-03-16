@@ -1,6 +1,29 @@
 import { InfoIcon } from "@/components/app/icons"
+import { UserLevelBadgeSvg } from "@/components/app/AppPageSectionSvgs"
 
 export function UserPopupCard({ user }) {
+  // 定义等级颜色映射 (Steam 风格)
+  const getLevelColor = (level) => {
+    const levelNum = parseInt(level);
+    if (levelNum === 461) return "#8659AE"; // 461级紫色
+    if (levelNum === 251) return "#5F91C4"; // 251级蓝色
+    if (levelNum === 213) return "#C45F5F"; // 213级红色
+    if (levelNum === 177) return "#8659AE"; // 177级紫色
+    if (levelNum === 159) return "#5F91C4"; // 159级蓝色
+    if (levelNum === 152) return "#5F91C4"; // 152级蓝色
+    if (levelNum === 131) return "#C4C45F"; // 131级黄色
+    if (levelNum === 50) return "#5F91C4";  // 50级蓝色
+    if (levelNum === 23) return "#BF654A";  // 23级铜色
+    if (levelNum === 10) return "#711E30";  // 10级深红色
+    
+    if (levelNum < 100) return "#BF654A";
+    if (levelNum < 200) return "#5F91C4";
+    if (levelNum < 300) return "#8659AE";
+    return "#8659AE";
+  };
+
+  const levelColor = getLevelColor(user.level);
+
   return (
     <div className="user-popup">
       <div className="user-popup-top">
@@ -14,9 +37,7 @@ export function UserPopupCard({ user }) {
           </div>
         </div>
         <div className="user-level-badge">
-          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50" fill="none">
-            <circle cx="25" cy="25" r="24" stroke="#BF654A" strokeWidth="2" />
-          </svg>
+          <UserLevelBadgeSvg level={user.level} color={levelColor} />
           <span>{user.level}</span>
         </div>
       </div>

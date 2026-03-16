@@ -1,14 +1,14 @@
 export const userData = [
-  { name: "Jenny", signature: "个人签名", level: "23", value: "¥2203.0", games: "49", hours: "253h", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jenny" },
-  { name: "Jone", signature: "个人签名", level: "10", value: "¥13915.1", games: "227", hours: "984h", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jone" },
-  { name: "Jilly", signature: "个人签名", level: "10", value: "¥376555.1", games: "3413", hours: "2661h", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jilly" },
-  { name: "Jack", signature: "个人签名", level: "10", value: "¥1916", games: "172", hours: "399h", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jack" },
-  { name: "Jane", signature: "个人签名", level: "10", value: "¥18.9", games: "1", hours: "97h", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Jane" },
-  { name: "James", signature: "个人签名", level: "10", value: "¥5420", games: "88", hours: "120h", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=James" },
-  { name: "Alice", signature: "个人签名", level: "15", value: "¥890.0", games: "32", hours: "150h", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Alice" },
-  { name: "Bob", signature: "个人签名", level: "12", value: "¥2500.5", games: "110", hours: "420h", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Bob" },
-  { name: "Charlie", signature: "个人签名", level: "8", value: "¥120.0", games: "5", hours: "20h", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=Charlie" },
-  { name: "David", signature: "个人签名", level: "20", value: "¥15600", games: "450", hours: "1200h", avatar: "https://api.dicebear.com/7.x/avataaars/svg?seed=David" },
+  { name: "Jenny", signature: "个人签名", level: "23", value: "¥2203.0", games: "49", hours: "253h", avatar: "/pic/img_v3_02vm_022f6143-d2e6-4f23-966d-77a4ef0471fg 1.png" },
+  { name: "Jenny", signature: "个人签名", level: "159", value: "¥2203.0", games: "49", hours: "253h", avatar: "/pic/img_v3_02vm_35ee1ed7-c9b0-4f9e-baf7-56614825ef4g 1.png" },
+  { name: "Jilly", signature: "个人签名", level: "131", value: "¥376555.1", games: "3413", hours: "2661h", avatar: "/pic/img_v3_02vm_38105653-0ee0-4ae5-b788-fd69364610fg 1.png" },
+  { name: "Jilly", signature: "个人签名", level: "461", value: "¥376555.1", games: "3413", hours: "2661h", avatar: "/pic/img_v3_02vm_4d9c3469-e8a3-4c14-8b70-6f068cc70e1g 1.png" },
+  { name: "Jenny", signature: "个人签名", level: "152", value: "¥1916", games: "172", hours: "399h", avatar: "/pic/img_v3_02vm_805b67cb-a886-4586-ba3e-937f20ab3e9g 1.png" },
+  { name: "Jenny", signature: "个人签名", level: "50", value: "¥1916", games: "172", hours: "399h", avatar: "/pic/img_v3_02vm_b6cdbcb9-9155-4eaa-9cc8-64d04c9453ag 1.png" },
+  { name: "Jone", signature: "个人签名", level: "177", value: "¥13915.1", games: "227", hours: "984h", avatar: "/pic/img_v3_02vm_c352da4f-7f7a-42de-bce7-2d111011a6bg 1.png" },
+  { name: "Jone", signature: "个人签名", level: "213", value: "¥13915.1", games: "227", hours: "984h", avatar: "/pic/img_v3_02vm_e114c805-f4b5-4bc6-bbe1-76122bb59b1g 1.png" },
+  { name: "Jenny", signature: "个人签名", level: "10", value: "¥18.9", games: "1", hours: "97h", avatar: "/pic/image 2.png" },
+  { name: "Jenny", signature: "个人签名", level: "251", value: "¥18.9", games: "1", hours: "97h", avatar: "/pic/image 3.png" },
 ]
 
 export const firstRowUsers = userData.slice(0, 5)
@@ -25,25 +25,25 @@ export const gameCovers = [
 
 export const featurePreviewPhotoRows = [
   [
-    { src: "/source_image.png", position: "50% 45%" },
+    { src: "/back/image 193.png", position: "50% 45%" },
     { src: "/image 185.png", position: "50% 50%" },
-    { src: "/source_image.png", position: "55% 62%" },
+    { src: "/back/image 196.png", position: "55% 62%" },
     { src: "/image 185.png", position: "45% 38%" },
-    { src: "/source_image.png", position: "48% 52%" },
+    { src: "/back/image 199.png", position: "48% 52%" },
   ],
   [
-    { src: "/image 185.png", position: "52% 60%" },
-    { src: "/source_image.png", position: "46% 40%" },
+    { src: "/back/image 191.png", position: "52% 60%" },
+    { src: "/back/image 200.png", position: "46% 40%" },
     { src: "/image 185.png", position: "50% 52%" },
-    { src: "/source_image.png", position: "58% 66%" },
-    { src: "/image 185.png", position: "43% 42%" },
+    { src: "/back/image 193.png", position: "58% 66%" },
+    { src: "/back/image 191.png", position: "43% 42%" },
   ],
   [
-    { src: "/source_image.png", position: "50% 48%" },
+    { src: "/back/image 196.png", position: "50% 48%" },
     { src: "/image 185.png", position: "48% 56%" },
-    { src: "/source_image.png", position: "56% 64%" },
+    { src: "/back/image 199.png", position: "56% 64%" },
     { src: "/image 185.png", position: "52% 44%" },
-    { src: "/source_image.png", position: "44% 38%" },
+    { src: "/back/image 200.png", position: "44% 38%" },
   ],
 ]
 

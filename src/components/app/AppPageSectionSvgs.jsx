@@ -24,6 +24,51 @@ export function ShowcaseAppleOutlineSvg() {
   )
 }
 
+export function UserLevelBadgeSvg({ level, color = "#5F91C4" }) {
+  // 根据等级范围返回不同的形状和颜色
+  // 0-99: 圆形
+  // 100-199: 六边形
+  // 200-299: 盾牌/五边形
+  // 300-499: 带有渐变填充的特殊盾牌
+  
+  const levelNum = parseInt(level);
+  
+  if (levelNum < 100) {
+    return (
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="25" cy="25" r="24" stroke={color} strokeWidth="2" />
+      </svg>
+    );
+  } else if (levelNum < 200) {
+    return (
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M49 13.1182V36.8818L25 48.8818L1 36.8818V13.1182L25 1.11816L49 13.1182Z" stroke={color} strokeWidth="2"/>
+      </svg>
+    );
+  } else if (levelNum < 300) {
+    return (
+      <svg width="50" height="40" viewBox="0 0 50 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M25 1C32.7925 1 38.9331 2.43557 43.1143 3.86328C45.2049 4.57715 46.8054 5.28892 47.877 5.81836C48.3603 6.05718 48.7358 6.25943 49 6.40723V22.5C49 25.6525 48.255 28.6493 46.2227 30.7412C42.8127 34.2511 36.1549 39 25 39C13.8451 39 7.18732 34.2511 3.77734 30.7412C1.745 28.6493 1 25.6525 1 22.5V6.40723C1.26416 6.25943 1.63972 6.05718 2.12305 5.81836C3.19457 5.28892 4.79513 4.57715 6.88574 3.86328C11.0669 2.43557 17.2075 1 25 1Z" stroke={color} strokeWidth="2"/>
+      </svg>
+    );
+  } else {
+    // 461 级别的特殊图标 (带有渐变填充)
+    const gradientId = `level-gradient-${levelNum}`;
+    return (
+      <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M25 0H50V37.5L25 50L0 37.5V0H25Z" fill={`url(#${gradientId})`}/>
+        <defs>
+          <linearGradient id={gradientId} x1="25" y1="0" x2="25" y2="32" gradientUnits="userSpaceOnUse">
+            <stop stopColor={color} stopOpacity="0"/>
+            <stop offset="1" stopColor={color}/>
+          </linearGradient>
+        </defs>
+      </svg>
+    );
+  }
+}
+
+
 export function SurveyButtonBackgroundSvg() {
   return (
     <svg className="survey-btn-bg" xmlns="http://www.w3.org/2000/svg" width="168" height="42" viewBox="0 0 168 42" fill="none">
@@ -46,7 +91,7 @@ export function SurveyButtonBackgroundSvg() {
 
 export function SurveyButtonSparkleSvg() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{flexShrink: 0}}>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{flexShrink: 0}}>
                   <path d="M9 6.5C9 6.32741 8.86009 6.1875 8.6875 6.1875C7.65196 6.1875 6.8125 5.34804 6.8125 4.3125C6.8125 4.13991 6.67259 4 6.5 4C6.32741 4 6.1875 4.13991 6.1875 4.3125C6.1875 5.34804 5.34804 6.1875 4.3125 6.1875C4.13991 6.1875 4 6.32741 4 6.5C4 6.67259 4.13991 6.8125 4.3125 6.8125C5.34804 6.8125 6.1875 7.65196 6.1875 8.6875C6.1875 8.86009 6.32741 9 6.5 9C6.67259 9 6.8125 8.86009 6.8125 8.6875C6.8125 7.65196 7.65196 6.8125 8.6875 6.8125C8.86009 6.8125 9 6.67259 9 6.5Z" fill="url(#si_g0)" style={{mixBlendMode:'screen'}}/>
                   <path d="M9 6.5C9 6.32741 8.86009 6.1875 8.6875 6.1875C7.65196 6.1875 6.8125 5.34804 6.8125 4.3125C6.8125 4.13991 6.67259 4 6.5 4C6.32741 4 6.1875 4.13991 6.1875 4.3125C6.1875 5.34804 5.34804 6.1875 4.3125 6.1875C4.13991 6.1875 4 6.32741 4 6.5C4 6.67259 4.13991 6.8125 4.3125 6.8125C5.34804 6.8125 6.1875 7.65196 6.1875 8.6875C6.1875 8.86009 6.32741 9 6.5 9C6.67259 9 6.8125 8.86009 6.8125 8.6875C6.8125 7.65196 7.65196 6.8125 8.6875 6.8125C8.86009 6.8125 9 6.67259 9 6.5Z" fill="white" fillOpacity="0.5"/>
                   <path d="M16.5 6C16.5 5.72386 16.2761 5.5 16 5.5C15.7239 5.5 15.5 5.72386 15.5 6C15.5 8.48488 13.4852 10.5 11 10.5C10.7239 10.5 10.5 10.7239 10.5 11C10.5 11.2761 10.7239 11.5 11 11.5C13.4853 11.5 15.5 13.5142 15.5 16C15.5 16.2761 15.7239 16.5 16 16.5C16.2761 16.5 16.5 16.2761 16.5 16C16.5 13.5141 18.5141 11.5 21 11.5C21.2761 11.5 21.5 11.2761 21.5 11C21.5 10.7239 21.2761 10.5 21 10.5C18.5142 10.5 16.5 8.48492 16.5 6Z" fill="url(#si_g1)" style={{mixBlendMode:'screen'}}/>
