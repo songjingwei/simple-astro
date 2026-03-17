@@ -141,10 +141,12 @@ export function HeroSection({ onOpenDownload }) {
               </div>
             </CometCard>
             <CometCard className="showcase-box showcase-box-large">
-              <div className="w-full h-full flex flex-col items-center justify-center p-8 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center opacity-40">
-                  <div className="w-[500px] h-[300px] bg-blue-500/20 blur-[120px] rounded-full" />
-                </div>
+              <div className="showcase-box-large-media">
+                <img
+                  className="showcase-box-large-image"
+                  src="/hero-showcase-right.png"
+                  alt="多设备游戏展示"
+                />
               </div>
             </CometCard>
           </div>
