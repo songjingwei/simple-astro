@@ -1,0 +1,54 @@
+/* ===== Text scroll reveal animation ===== */
+.hero-title,
+.hero-headline,
+.hero-subtitle,
+.hero-caption,
+.showcase-title,
+.showcase-subtitle,
+.steam-management-title,
+.steam-management-subtitle,
+.steam-data-text,
+.compat-title,
+.compat-desc,
+.compat-card-title,
+.compat-card-desc,
+.survey-title,
+.survey-desc,
+.feature-preview-title,
+.feature-preview-desc,
+.feature-card-title,
+.feature-card-desc,
+.faq-title,
+.faq-subtitle,
+.faq-bottom-logo-text {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.hero-title.is-revealed,
+.hero-headline.is-revealed,
+.hero-subtitle.is-revealed,
+.hero-caption.is-revealed,
+.showcase-title.is-revealed,
+.showcase-subtitle.is-revealed,
+.steam-management-title.is-revealed,
+.steam-management-subtitle.is-revealed,
+.steam-data-text.is-revealed,
+.compat-title.is-revealed,
+.compat-desc.is-revealed,
+.compat-card-title.is-revealed,
+.compat-card-desc.is-revealed,
+.survey-title.is-revealed,
+.survey-desc.is-revealed,
+.feature-preview-title.is-revealed,
+.feature-preview-desc.is-revealed,
+.feature-card-title.is-revealed,
+.feature-card-desc.is-revealed,
+.faq-title.is-revealed,
+.faq-subtitle.is-revealed,
+.faq-bottom-logo-text.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}

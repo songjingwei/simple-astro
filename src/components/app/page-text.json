@@ -119,6 +119,26 @@
       "en": "Mac",
       "zh": "也可以是游戏机",
       "subtitle": "客户端内测版本抢先体验开启"
+    },
+    "footer": {
+      "copyright": "Copyright 2025 All Rights Reserved.",
+      "company": "广州小鸡快跑网络科技有限公司",
+      "address": "地址：广州市天河区员村西街2号大院19号1001、1003房",
+      "filings": [
+        {
+          "linkKey": "wenwangwen",
+          "label": "粤网文[2016]575-1561号",
+          "showIcon": true
+        },
+        {
+          "linkKey": "icp",
+          "label": "粤ICP备10217906号-14"
+        },
+        {
+          "linkKey": "gongan",
+          "label": "公安备案号44010602003042"
+        }
+      ]
     }
   }
 }
