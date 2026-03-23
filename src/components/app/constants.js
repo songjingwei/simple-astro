@@ -20,7 +20,7 @@ export const gameCovers = [
   { id: 3, name: "博德之门3", designation: "角色扮演", image: "/Rectangle 1165.png" },
   { id: 4, name: "赛博朋克2077", designation: "动作冒险", image: "/Rectangle 1167.png" },
   { id: 5, name: "只狼", designation: "动作冒险", image: "/Rectangle 1169.png" },
-  { id: 6, name: "49", designation: "", image: "" },
+  { id: 6, name: "200+", designation: "", image: "" },
 ]
 
 export const featurePreviewPhotoRows = [

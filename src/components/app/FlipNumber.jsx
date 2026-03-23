@@ -31,16 +31,16 @@ export function FlipNumber({ value, className, counting = false }) {
     })
 
     if (counting) {
-      let counter = 1
+      let counter = 1000
       let raf = null
       let lastTime = 0
 
       function tick(time) {
         if (time - lastTime >= 350) {
           lastTime = time
-          counter = counter >= 9999 ? 1 : counter + 1
+          counter = counter >= 9999 ? 1000 : counter + 1
           const decimal = Math.floor(Math.random() * 10)
-          const numStr = String(counter).padStart(4, "0") + String(decimal)
+          const numStr = String(counter) + String(decimal)
 
           digitStrips.forEach((s, i) => {
             if (i < numStr.length) {
