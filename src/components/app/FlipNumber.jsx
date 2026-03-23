@@ -36,7 +36,7 @@ export function FlipNumber({ value, className, counting = false }) {
       let lastTime = 0
 
       function tick(time) {
-        if (time - lastTime >= 50) {
+        if (time - lastTime >= 350) {
           lastTime = time
           counter = counter >= 9999 ? 1 : counter + 1
           const decimal = Math.floor(Math.random() * 10)
@@ -45,7 +45,7 @@ export function FlipNumber({ value, className, counting = false }) {
           digitStrips.forEach((s, i) => {
             if (i < numStr.length) {
               const d = parseInt(numStr[i])
-              s.style.transition = "transform 0.3s cubic-bezier(0.22,1,0.36,1)"
+              s.style.transition = "transform 0.8s cubic-bezier(0.22,1,0.36,1)"
               s.style.transform = `translateY(-${d * 10}%)`
             }
           })

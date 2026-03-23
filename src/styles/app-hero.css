@@ -322,6 +322,12 @@
   width: 100%;
 }
 
+.showcase-masonry-wrap {
+  margin-top: 96px;
+  width: 1200px;
+  max-width: 100%;
+}
+
 .steam-management {
   margin-top: 264px;
   width: 100%;

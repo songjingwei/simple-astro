@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react"
 import { ShowcaseSparkles } from "@/components/ShowcaseSparkles"
-import { CometCard } from "@/components/ui/comet-card"
 import { Marquee } from "@/registry/magicui/marquee"
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip"
 import { FlipNumber } from "@/components/app/FlipNumber"
@@ -140,15 +139,15 @@ export function HeroSection({ onOpenDownload }) {
           </p>
           <div className="showcase-grid">
             <div className="showcase-box-anim">
-              <CometCard className="showcase-box showcase-box-small" autoAnimate>
+              <div className="showcase-box showcase-box-small">
                 <div className="showcase-box-icon">
                   <ShowcaseAppleOutlineSvg />
                   <div className="showcase-box-text">{pageText.hero.showcase.cardLabel}</div>
                 </div>
-              </CometCard>
+              </div>
             </div>
             <div className="showcase-box-anim showcase-box-anim-delay">
-              <CometCard className="showcase-box showcase-box-large" autoAnimate>
+              <div className="showcase-box showcase-box-large">
                 <div className="showcase-box-large-media">
                   <img
                     className="showcase-box-large-image"
@@ -156,7 +155,7 @@ export function HeroSection({ onOpenDownload }) {
                     alt="多设备游戏展示"
                   />
                 </div>
-              </CometCard>
+              </div>
             </div>
           </div>
         </div>
@@ -187,7 +186,7 @@ export function HeroSection({ onOpenDownload }) {
           <div className="steam-data-grid">
             <div className="steam-data-card">
               <div className="game-covers-stack">
-                <AnimatedTooltip items={gameCovers} />
+                <AnimatedTooltip items={gameCovers} autoPlay autoInterval={2500} />
               </div>
               <span className="steam-data-card-label">{pageText.steam.cards.countLabel}</span>
             </div>
