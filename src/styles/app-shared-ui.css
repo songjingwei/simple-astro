@@ -181,6 +181,8 @@
   backdrop-filter: blur(10px);
   gap: 16px;
   position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
 }
 
 .user-popup::before {
@@ -272,6 +274,8 @@
   align-items: center;
   justify-content: center;
   position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
 }
 
 .user-level-badge svg {

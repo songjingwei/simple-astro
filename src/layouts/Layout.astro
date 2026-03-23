@@ -16,7 +16,7 @@ const { title = 'Astro Site' } = Astro.props;
     <slot />
     <script>
       function initReveal() {
-        const selectors = [
+        const textSelectors = [
           '.hero-title', '.hero-headline',
           '.hero-subtitle', '.hero-caption',
           '.showcase-title', '.showcase-subtitle',
@@ -28,7 +28,11 @@ const { title = 'Astro Site' } = Astro.props;
           '.feature-card-title', '.feature-card-desc',
           '.faq-title', '.faq-subtitle', '.faq-bottom-logo-text',
         ];
-        const els = document.querySelectorAll(selectors.join(','));
+        const cardSelectors = [
+          '.showcase-box-anim',
+        ];
+        const allSelectors = [...textSelectors, ...cardSelectors];
+        const els = document.querySelectorAll(allSelectors.join(','));
         if (els.length === 0) {
           requestAnimationFrame(initReveal);
           return;
@@ -37,7 +41,8 @@ const { title = 'Astro Site' } = Astro.props;
           entries.forEach((e) => {
             if (e.isIntersecting) {
               e.target.classList.add('is-revealed');
-              observer.unobserve(e.target);
+            } else {
+              e.target.classList.remove('is-revealed');
             }
           });
         }, { threshold: 0.1 });

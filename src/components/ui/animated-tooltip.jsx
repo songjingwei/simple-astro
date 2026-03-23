@@ -28,50 +28,59 @@ export const AnimatedTooltip = ({ items }) => {
 
   return (
     <>
-      {items.map((item) => (
-        <div
-          className="game-cover-frame"
-          key={item.id}
-          onMouseEnter={() => setHoveredIndex(item.id)}
-          onMouseLeave={() => setHoveredIndex(null)}
-        >
-          <AnimatePresence mode="popLayout">
-            {hoveredIndex === item.id && (
-              <motion.div
-                initial={{ opacity: 0, y: 20, scale: 0.6 }}
-                animate={{
-                  opacity: 1,
-                  y: 0,
-                  scale: 1,
-                  transition: {
-                    type: "spring",
-                    stiffness: 260,
-                    damping: 10,
-                  },
-                }}
-                exit={{ opacity: 0, y: 20, scale: 0.6 }}
-                style={{
-                  translateX: translateX,
-                  rotate: rotate,
-                  whiteSpace: "nowrap",
-                }}
-                className="animated-tooltip-popup"
-              >
-                <div className="animated-tooltip-name">{item.name}</div>
-                <div className="animated-tooltip-designation">
-                  {item.designation}
-                </div>
-              </motion.div>
+      {items.map((item, index) => {
+        const isLast = index === items.length - 1;
+        return (
+          <div
+            className={`game-cover-frame${isLast ? " game-count-badge" : ""}`}
+            key={item.id}
+            onMouseEnter={() => !isLast && setHoveredIndex(item.id)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <AnimatePresence mode="popLayout">
+              {hoveredIndex === item.id && (
+                <motion.div
+                  initial={{ opacity: 0, y: 20, scale: 0.6 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: {
+                      type: "spring",
+                      stiffness: 260,
+                      damping: 10,
+                    },
+                  }}
+                  exit={{ opacity: 0, y: 20, scale: 0.6 }}
+                  style={{
+                    translateX: translateX,
+                    rotate: rotate,
+                    whiteSpace: "nowrap",
+                  }}
+                  className="animated-tooltip-popup"
+                >
+                  <div className="animated-tooltip-name">{item.name}</div>
+                  <div className="animated-tooltip-designation">
+                    {item.designation}
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+            {isLast ? (
+              <div className="game-count-inner">
+                <span className="game-count-text">{item.name}</span>
+              </div>
+            ) : (
+              <img
+                onMouseMove={handleMouseMove}
+                className="game-cover"
+                src={item.image}
+                alt={item.name}
+              />
             )}
-          </AnimatePresence>
-          <img
-            onMouseMove={handleMouseMove}
-            className="game-cover"
-            src={item.image}
-            alt={item.name}
-          />
-        </div>
-      ))}
+          </div>
+        );
+      })}
     </>
   );
 };

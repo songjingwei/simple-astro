@@ -52,3 +52,20 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== Showcase card scroll reveal ===== */
+.showcase-box-anim {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.1, 0.25, 1),
+              transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.showcase-box-anim.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.showcase-box-anim-delay {
+  transition-delay: 0.15s;
+}

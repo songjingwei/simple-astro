@@ -27,6 +27,7 @@
     "syncDataTitle": "我们同步的 Steam 数据",
     "cards": {
       "countLabel": "游戏数量",
+      "countValue": "49",
       "valueLabel": "账号价值",
       "value": "¥1967.7",
       "hoursLabel": "游戏时长",
