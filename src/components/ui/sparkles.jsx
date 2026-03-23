@@ -35,9 +35,9 @@ export function SparklesCore({
       y: Math.random() * height,
       size: randomBetween(minSize, maxSize),
       alpha: randomBetween(0.2, 0.9),
-      alphaSpeed: randomBetween(0.003, 0.012),
-      velocityX: randomBetween(-0.08, 0.08),
-      velocityY: randomBetween(-0.18, -0.04),
+      alphaSpeed: randomBetween(0.015, 0.045),
+      velocityX: randomBetween(-0.4, 0.4),
+      velocityY: randomBetween(-0.8, -0.2),
     })
 
     const resize = () => {
