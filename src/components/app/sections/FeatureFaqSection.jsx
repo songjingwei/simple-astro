@@ -55,7 +55,7 @@ export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload })
   const faqFooter = pageText.faq.footer
 
   return (
-    <section className="feature-preview-section">
+    <section className="feature-preview-section" id="feature-preview">
       <div className="feature-preview-glow-wrapper">
         <FeaturePreviewGlowSvg />
       </div>
@@ -171,7 +171,7 @@ export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload })
             })}
           </div>
           <div className="faq-bottom-logo">
-            <img src="/image 202.png" alt={pageText.faq.logoAlt} className="faq-bottom-logo-image" />
+            <img src="/logo2.png" alt={pageText.faq.logoAlt} className="faq-bottom-logo-image" />
             <p className="faq-bottom-logo-text">{pageText.faq.logoText}</p>
           </div>
           <div className="faq-bottom-headline">
@@ -187,20 +187,20 @@ export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload })
             <LaserFlow
               className="faq-bottom-panel-laser"
               color="#B2FCFF"
-              horizontalSizing={1.2}
-              verticalSizing={3.0}
+              horizontalSizing={1.6}
+              verticalSizing={3.7}
               horizontalBeamOffset={0}
               verticalBeamOffset={-0.5}
-              wispDensity={0.6}
-              wispSpeed={10}
-              wispIntensity={4}
-              flowSpeed={0.25}
-              flowStrength={0.2}
-              fogIntensity={0.9}
-              fogScale={0.25}
-              fogFallSpeed={0.4}
-              decay={1.4}
-              falloffStart={1.5}
+              wispDensity={3.9}
+              wispSpeed={40}
+              wispIntensity={5}
+              flowSpeed={0.77}
+              flowStrength={0.4}
+              fogIntensity={0.75}
+              fogScale={0.3}
+              fogFallSpeed={0.6}
+              decay={1.1}
+              falloffStart={1.2}
             />
             <p className="faq-bottom-panel-copyright">{faqFooter.copyright}</p>
             <div className="faq-bottom-panel-footer">

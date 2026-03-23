@@ -24,7 +24,7 @@ export function AppPageSections({
         onToggleFaq={onToggleFaq}
         onOpenDownload={onOpenDownload}
       />
-      {showDownload && <DownloadModal onClose={onCloseDownload} />}
+      {/* {showDownload && <DownloadModal onClose={onCloseDownload} />} */}
     </main>
   )
 }
