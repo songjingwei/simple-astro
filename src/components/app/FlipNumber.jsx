@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-export function FlipNumber({ value, className }) {
+export function FlipNumber({ value, className, counting = false }) {
   const ref = useRef(null)
 
   useEffect(() => {
@@ -21,17 +21,42 @@ export function FlipNumber({ value, className }) {
       d.style.lineHeight = `${h}px`
     })
 
-    // 记录每个 strip 当前数字
-    const current = Array.from(strips).map((s) => {
+    const digitStrips = Array.from(strips)
+    const current = digitStrips.map((s) => {
       return Math.abs(parseInt(s.dataset.target)) / 10
     })
 
-    // 设置初始位置
     strips.forEach((s, i) => {
       s.style.transform = `translateY(-${current[i] * 10}%)`
     })
 
-    const digitStrips = Array.from(strips)
+    if (counting) {
+      let counter = 1000
+      let raf = null
+      let lastTime = 0
+
+      function tick(time) {
+        if (time - lastTime >= 350) {
+          lastTime = time
+          counter = counter >= 9999 ? 1000 : counter + 1
+          const decimal = Math.floor(Math.random() * 10)
+          const numStr = String(counter) + String(decimal)
+
+          digitStrips.forEach((s, i) => {
+            if (i < numStr.length) {
+              const d = parseInt(numStr[i])
+              s.style.transition = "transform 0.8s cubic-bezier(0.22,1,0.36,1)"
+              s.style.transform = `translateY(-${d * 10}%)`
+            }
+          })
+        }
+        raf = requestAnimationFrame(tick)
+      }
+
+      raf = requestAnimationFrame(tick)
+      return () => cancelAnimationFrame(raf)
+    }
+
     let timer = null
 
     function rollRandom() {
@@ -58,7 +83,7 @@ export function FlipNumber({ value, className }) {
 
     timer = setTimeout(rollRandom, 1000)
     return () => clearTimeout(timer)
-  }, [])
+  }, [counting])
 
   const chars = value.split("")
 

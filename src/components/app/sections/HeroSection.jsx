@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react"
 import { ShowcaseSparkles } from "@/components/ShowcaseSparkles"
-import { CometCard } from "@/components/ui/comet-card"
 import { Marquee } from "@/registry/magicui/marquee"
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip"
 import { FlipNumber } from "@/components/app/FlipNumber"
@@ -139,21 +138,25 @@ export function HeroSection({ onOpenDownload }) {
             {pageText.hero.showcase.subtitle}
           </p>
           <div className="showcase-grid">
-            <CometCard className="showcase-box showcase-box-small">
-              <div className="showcase-box-icon">
-                <ShowcaseAppleOutlineSvg />
-                <div className="showcase-box-text">{pageText.hero.showcase.cardLabel}</div>
+            <div className="showcase-box-anim">
+              <div className="showcase-box showcase-box-small">
+                <div className="showcase-box-icon">
+                  <ShowcaseAppleOutlineSvg />
+                  <div className="showcase-box-text">{pageText.hero.showcase.cardLabel}</div>
+                </div>
               </div>
-            </CometCard>
-            <CometCard className="showcase-box showcase-box-large">
-              <div className="showcase-box-large-media">
-                <img
-                  className="showcase-box-large-image"
-                  src="/hero-showcase-right.png"
-                  alt="多设备游戏展示"
-                />
+            </div>
+            <div className="showcase-box-anim showcase-box-anim-delay">
+              <div className="showcase-box showcase-box-large">
+                <div className="showcase-box-large-media">
+                  <img
+                    className="showcase-box-large-image"
+                    src="/hero-showcase-right.png"
+                    alt="多设备游戏展示"
+                  />
+                </div>
               </div>
-            </CometCard>
+            </div>
           </div>
         </div>
         <div className="steam-management">
@@ -183,7 +186,7 @@ export function HeroSection({ onOpenDownload }) {
           <div className="steam-data-grid">
             <div className="steam-data-card">
               <div className="game-covers-stack">
-                <AnimatedTooltip items={gameCovers} />
+                <AnimatedTooltip items={gameCovers} autoPlay autoInterval={2500} />
               </div>
               <span className="steam-data-card-label">{pageText.steam.cards.countLabel}</span>
             </div>
@@ -192,7 +195,7 @@ export function HeroSection({ onOpenDownload }) {
             <div className="steam-data-card steam-data-card-small">
               <div className="steam-hours-card">
                 <div className="steam-hours-inner">
-                  <FlipNumber className="steam-hours-value" value={pageText.steam.cards.value} />
+                  <FlipNumber className="steam-hours-value" value={pageText.steam.cards.value} counting />
                 </div>
               </div>
               <span className="steam-data-card-label">{pageText.steam.cards.valueLabel}</span>
@@ -202,7 +205,7 @@ export function HeroSection({ onOpenDownload }) {
             <div className="steam-data-card steam-data-card-small">
               <div className="steam-hours-card">
                 <div className="steam-hours-inner">
-                  <FlipNumber className="steam-hours-value" value={pageText.steam.cards.hoursValue} />
+                  <FlipNumber className="steam-hours-value" value={pageText.steam.cards.hoursValue} counting />
                 </div>
               </div>
               <span className="steam-data-card-label">{pageText.steam.cards.hoursLabel}</span>
