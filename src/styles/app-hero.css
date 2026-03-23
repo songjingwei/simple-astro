@@ -249,12 +249,14 @@
 
 .video-modal-player {
   width: 100%;
+  aspect-ratio: 16 / 9;
   max-height: min(76vh, 740px);
   border-radius: 16px;
   border: 1px solid rgba(186, 215, 245, 0.2);
   background: #000;
   display: block;
   box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  object-fit: contain;
 }
 
 .video-modal-close {
@@ -414,8 +416,12 @@
 
 .steam-data-center-img {
   position: absolute;
-  top: 230px;
-  left: 564px;
+  top: 242px;
+  left: 576px;
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .steam-data-grid {

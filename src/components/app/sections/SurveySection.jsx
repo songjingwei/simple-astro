@@ -8,16 +8,16 @@ import {
 
 export function SurveySection() {
   return (
-    <section className="survey-section">
+    <section className="survey-section" id="survey-feedback">
       <h2 className="survey-title">{pageText.survey.title}</h2>
       <p className="survey-desc">{pageText.survey.descPrefix}<span className="survey-desc-bold">{pageText.survey.descHighlight}</span><br />{pageText.survey.descSuffix}</p>
-      <div className="survey-btn">
+      <a className="survey-btn" href="https://gamesirworld.feishu.cn/base/Oksyb0sBGaxM7esjwi1cLc6pnwh?table=tblYK0E8bAcNiFQg&view=vewoiUIlNk" target="_blank" rel="noopener noreferrer">
         <SurveyButtonBackgroundSvg />
         <span className="survey-btn-text">
           <SurveyButtonSparkleSvg />
           {pageText.survey.button}
         </span>
-      </div>
+      </a>
       <div className="survey-glow-wrapper">
         <div className="survey-particles">
           <SparklesCore

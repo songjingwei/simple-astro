@@ -80,7 +80,7 @@ export function HeroSection({ onOpenDownload }) {
 
   return (
     <>
-      <section className="hero">
+      <section className="hero" id="version-intro">
         <h1 className="hero-title">{pageText.hero.title}</h1>
         <HeroHeadlineBlock
           enText={pageText.hero.headline.en}
@@ -96,9 +96,14 @@ export function HeroSection({ onOpenDownload }) {
             <AppleIcon />
             <span className="download-button-label">{pageText.hero.downloadButton}</span>
           </button>
-          <button type="button" className="download-button-secondary">
+          <a
+            href="https://qun.qq.com/universal-share/share?ac=1&authKey=Rp3w75Bd6K7%2BZ8nWgg8IQrS7rhur1qyXbeehPiQLi8YimvBWPSNLGuq06BXzCAwk&busi_data=eyJncm91cENvZGUiOiIxMDc5MjQ2NTQzIiwidG9rZW4iOiJmWHY5U0NXcWNDZno1dW1xQ1NzeUtPN0o3Rk1NbURSNFZlVjN2Y25MdEUvSnNoQUxRMHlzWWMwZmJGaENZcEg1IiwidWluIjoiMzE1NDc1NTY5NCJ9&data=oLzlFkd2CpiGI5G2ZICajN9SjUWc5etc9Tk7VPetS-1Zz3sRa9Rz9Nf8H5QiHQCoQI-lHvEudh78RzBStOF6Ag&svctype=4&tempid=h5_group_info"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="download-button-secondary"
+          >
             <span className="download-button-secondary-label">{pageText.hero.communityButton}</span>
-          </button>
+          </a>
         </div>
         <p className="hero-caption">{pageText.hero.caption}</p>
         <div className="hero-showcase-outer">
@@ -174,7 +179,7 @@ export function HeroSection({ onOpenDownload }) {
         <div className="steam-data-text">{pageText.steam.syncDataTitle}</div>
         <div className="steam-data-section">
           <img className="steam-data-bg" src="/Background.png" alt="" />
-          <img className="steam-data-center-img" src="/image 213.png" alt="" />
+          <img className="steam-data-center-img" src="/logo2.png" alt="" />
           <div className="steam-data-grid">
             <div className="steam-data-card">
               <div className="game-covers-stack">

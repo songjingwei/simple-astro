@@ -40,6 +40,7 @@
 
 .survey-btn {
   position: relative;
+  z-index: 3;
   width: 168px;
   height: 42px;
   margin-top: 46px;
@@ -47,6 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 .survey-btn-bg {
@@ -830,8 +832,9 @@
 
 .faq-bottom-logo-image {
   display: block;
-  width: auto;
-  height: auto;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
 }
 
 .faq-bottom-logo-text {
