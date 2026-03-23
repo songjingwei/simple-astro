@@ -33,21 +33,16 @@
 
 .hero-headline-en {
   text-align: center;
-  text-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
   font-family: Gilroy;
   font-size: 80px;
   font-style: normal;
   font-weight: 700;
   line-height: 100%;
-  background: linear-gradient(93deg, #FAFAFA 24.45%, #A1A1AA 73.78%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #FFFFFF;
 }
 
 .hero-headline-zh {
   text-align: center;
-  text-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
   font-family: MiSans;
   font-size: 80px;
   font-style: normal;

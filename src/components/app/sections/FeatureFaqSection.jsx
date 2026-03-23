@@ -140,7 +140,6 @@ export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload })
         </div>
         <section className="faq-section">
           <h2 className="faq-title">{pageText.faq.title}</h2>
-          <p className="faq-subtitle">{pageText.faq.subtitle}</p>
           <div className="faq-list">
             {faqItems.map((item, index) => {
               const isOpen = openFaqIndex === index
