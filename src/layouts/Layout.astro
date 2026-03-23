@@ -6,7 +6,7 @@ const { title = 'Astro Site' } = Astro.props;
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
@@ -14,6 +14,26 @@ const { title = 'Astro Site' } = Astro.props;
   </head>
   <body>
     <slot />
+    <script is:inline>
+      (function() {
+        function applyScale() {
+          var app = document.querySelector('.app');
+          if (!app) return;
+          var scale = Math.min(1, window.innerWidth / 1440);
+          if (scale < 1) {
+            app.style.transform = 'scale(' + scale + ')';
+            app.style.transformOrigin = 'top left';
+            app.style.marginBottom = -(app.scrollHeight * (1 - scale)) + 'px';
+          } else {
+            app.style.transform = '';
+            app.style.transformOrigin = '';
+            app.style.marginBottom = '';
+          }
+        }
+        applyScale();
+        window.addEventListener('resize', applyScale);
+      })();
+    </script>
     <script>
       function initReveal() {
         const textSelectors = [

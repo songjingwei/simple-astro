@@ -206,9 +206,11 @@
 }
 
 .header-rainbow-button {
-  width: 104px;
+  min-width: 104px;
+  width: fit-content;
   height: 36px;
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .header-rainbow-button .rainbow-button-content {
