@@ -553,12 +553,14 @@
 .download-button-primary {
   position: relative;
   display: flex;
-  width: 112px;
+  min-width: 112px;
+  width: fit-content;
   height: 36px;
   padding: 8px 16px;
   justify-content: center;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
   box-sizing: border-box;
   border: 0;
   border-radius: 8px;
@@ -621,17 +623,20 @@
   font-style: normal;
   font-weight: 380;
   line-height: 20px;
+  white-space: nowrap;
 }
 
 .download-button-secondary {
   position: relative;
   display: flex;
-  width: 116px;
+  min-width: 116px;
+  width: fit-content;
   height: 36px;
   padding: 8px 16px;
   justify-content: center;
   align-items: center;
   gap: 8px;
+  white-space: nowrap;
   box-sizing: border-box;
   border-radius: 6px;
   border: 0;
