@@ -828,6 +828,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 3;
 }
 
 .faq-bottom-logo-image {
@@ -908,13 +910,13 @@
   bottom: 100%;
   transform: translateX(-50%);
   width: min(1024px, 100vw);
-  height: 850px;
+  height: 900px;
   z-index: 0;
   pointer-events: none;
   mix-blend-mode: screen;
   opacity: 0.8;
-  -webkit-mask-image: none;
-  mask-image: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 40%, black 100%);
 }
 
 .faq-bottom-panel-copyright {
