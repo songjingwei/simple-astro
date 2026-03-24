@@ -1,6 +1,9 @@
 import { AppleIcon } from "@/components/app/icons"
+import { useI18n } from "@/i18n/context"
 
 export function HeroHeadlineBlock({ enText, zhText, subtitle, showDownloadButton = false, onDownload }) {
+  const { t } = useI18n()
+
   return (
     <>
       <div className="hero-headline" aria-label={`${enText} ${zhText}`}>
@@ -16,7 +19,7 @@ export function HeroHeadlineBlock({ enText, zhText, subtitle, showDownloadButton
             onClick={onDownload}
           >
             <AppleIcon />
-            <span className="download-button-label">立即下载</span>
+            <span className="download-button-label">{t.hero.downloadButton}</span>
           </button>
         </div>
       )}

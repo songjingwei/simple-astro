@@ -2,11 +2,10 @@ import LaserFlow from "@/components/LaserFlow"
 import { HeroHeadlineBlock } from "@/components/app/HeroHeadlineBlock"
 import { Marquee } from "@/registry/magicui/marquee"
 import {
-  faqItems,
   filingLinks,
   featurePreviewPhotoRows,
 } from "@/components/app/constants"
-import pageText from "@/components/app/page-text.json"
+import { useI18n } from "@/i18n/context"
 import {
   FaqChevronDownIcon,
   FaqChevronUpIcon,
@@ -25,12 +24,11 @@ import {
 } from "@/components/app/AppPageSectionSvgs"
 
 function renderFaqAnswer(item) {
-  if (item.question !== "如何配置模拟器兼容性方案？") {
+  if (!item.linkText) {
     return item.answer
   }
 
-  const linkText = "配置专属兼容性方案的游戏名单持续更新中"
-  const [before, after] = item.answer.split(linkText)
+  const [before, after] = item.answer.split(item.linkText)
   if (before === undefined || after === undefined) {
     return item.answer
   }
@@ -44,7 +42,7 @@ function renderFaqAnswer(item) {
         rel="noopener noreferrer"
         style={{ color: "#3B82F6", textDecoration: "underline" }}
       >
-        {linkText}
+        {item.linkText}
       </a>
       {after}
     </>
@@ -52,7 +50,8 @@ function renderFaqAnswer(item) {
 }
 
 export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload }) {
-  const faqFooter = pageText.faq.footer
+  const { t } = useI18n()
+  const faqFooter = t.faq.footer
 
   return (
     <section className="feature-preview-section" id="feature-preview">
@@ -60,8 +59,8 @@ export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload })
         <FeaturePreviewGlowSvg />
       </div>
       <div className="feature-preview-content">
-        <h2 className="feature-preview-title">{pageText.feature.title}</h2>
-        <p className="feature-preview-desc">{pageText.feature.desc}</p>
+        <h2 className="feature-preview-title">{t.feature.title}</h2>
+        <p className="feature-preview-desc">{t.feature.desc}</p>
         <div className="feature-preview-cards">
           <div className="feature-preview-card feature-preview-card-epic">
             <div className="feature-card-logo-container">
@@ -73,12 +72,12 @@ export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload })
             </div>
             <img className="feature-card-bottom-circuit feature-card-bottom-circuit-left" src="/epic-circuit-bottom-left.svg" alt="" aria-hidden="true" />
             <img className="feature-card-bottom-circuit feature-card-bottom-circuit-right" src="/epic-circuit-bottom-right.svg" alt="" aria-hidden="true" />
-            <h3 className="feature-card-title">{pageText.feature.epic.title}</h3>
-            <p className="feature-card-desc">{pageText.feature.epic.desc}</p>
+            <h3 className="feature-card-title">{t.feature.epic.title}</h3>
+            <p className="feature-card-desc">{t.feature.epic.desc}</p>
           </div>
           <div className="feature-preview-card feature-preview-card-games">
-            <h3 className="feature-card-title">{pageText.feature.games.title}</h3>
-            <p className="feature-card-desc">{pageText.feature.games.desc}</p>
+            <h3 className="feature-card-title">{t.feature.games.title}</h3>
+            <p className="feature-card-desc">{t.feature.games.desc}</p>
             <div className="feature-card-games-box" aria-hidden="true">
               <div className="feature-card-games-marquees">
                 <Marquee className="feature-card-games-marquee feature-card-games-marquee-row1" style={{ "--duration": "26s", "--gap": "7px" }}>
@@ -108,8 +107,8 @@ export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload })
             </div>
           </div>
           <div className="feature-preview-card feature-preview-card-cdkey">
-            <h3 className="feature-card-title">{pageText.feature.platform.title}</h3>
-            <p className="feature-card-desc">{pageText.feature.platform.desc}</p>
+            <h3 className="feature-card-title">{t.feature.platform.title}</h3>
+            <p className="feature-card-desc">{t.feature.platform.desc}</p>
             <div className="feature-card-cdkey-boxes">
               <CdkeyConnectorTopLeftSvg />
               <CdkeyConnectorTopRightSvg />
@@ -139,12 +138,12 @@ export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload })
           </div>
         </div>
         <section className="faq-section">
-          <h2 className="faq-title">{pageText.faq.title}</h2>
+          <h2 className="faq-title">{t.faq.title}</h2>
           <div className="faq-list">
-            {faqItems.map((item, index) => {
+            {t.faqItems.map((item, index) => {
               const isOpen = openFaqIndex === index
               return (
-                <article key={item.question} className={`faq-item ${isOpen ? "is-open" : ""}`}>
+                <article key={index} className={`faq-item ${isOpen ? "is-open" : ""}`}>
                   <button
                     className="faq-item-trigger"
                     type="button"
@@ -170,14 +169,14 @@ export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload })
             })}
           </div>
           <div className="faq-bottom-logo">
-            <img src="/logo2.png" alt={pageText.faq.logoAlt} className="faq-bottom-logo-image" />
-            <p className="faq-bottom-logo-text">{pageText.faq.logoText}</p>
+            <img src="/logo2.png" alt={t.faq.logoAlt} className="faq-bottom-logo-image" />
+            <p className="faq-bottom-logo-text">{t.faq.logoText}</p>
           </div>
           <div className="faq-bottom-headline">
             <HeroHeadlineBlock
-              enText={pageText.faq.headline.en}
-              zhText={pageText.faq.headline.zh}
-              subtitle={pageText.faq.headline.subtitle}
+              enText={t.faq.headline.en}
+              zhText={t.faq.headline.zh}
+              subtitle={t.faq.headline.subtitle}
               showDownloadButton
               onDownload={onOpenDownload}
             />

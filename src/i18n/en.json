@@ -1,0 +1,216 @@
+{
+  "header": {
+    "nav": ["Version Info", "Feedback", "Feature Preview"],
+    "downloadButton": "Download"
+  },
+  "hero": {
+    "title": "GameSir Hub",
+    "headline": {
+      "en": "Mac",
+      "zh": "Can Be a Game Console",
+      "subtitle": "Beta client now available for early access"
+    },
+    "downloadButton": "Download Now",
+    "communityButton": "Join Beta Community",
+    "caption": "This beta only supports Mac with M-series chips",
+    "videoPlayLabel": "Play video",
+    "videoModalLabel": "Video player dialog",
+    "videoCloseLabel": "Close video player",
+    "showcaseImageAlt": "Multi-device gaming showcase",
+    "showcase": {
+      "title": "Play Windows Games",
+      "subtitle": "Break through hardware limitations, experience Windows AAA titles on Mac",
+      "cardLabel": "AAA Games on Mac",
+      "banner": "Break Barriers, Play Without Limits",
+      "bannerWord": "GAMEHUB"
+    }
+  },
+  "steam": {
+    "title": "Steam Multi-Account Management",
+    "subtitle": "Steam account interoperability, auto-sync account data and cloud saves, seamless gaming",
+    "syncDataTitle": "Steam Data We Sync",
+    "cards": {
+      "countLabel": "Games",
+      "countValue": "200+",
+      "valueLabel": "Account Value",
+      "value": "¥1967.7",
+      "hoursLabel": "Play Time",
+      "hoursValue": "1967.7h",
+      "cloudLabel": "Cloud Saves"
+    }
+  },
+  "compat": {
+    "title": "Personalized Compatibility Profiles",
+    "desc": "Configure game-specific emulator compatibility profiles for the ultimate gaming experience",
+    "leftCard": {
+      "title": "General Settings",
+      "desc": "Fine-tune based on game characteristics and device environment for higher freedom and more controllable gaming experience. Deep customization based on game traits and personal preferences for a uniquely tailored gameplay",
+      "metalHud": {
+        "title": "MetalHUD",
+        "desc": "Display Metal performance monitoring panel in-game when enabled"
+      },
+      "avx": {
+        "title": "AVX Acceleration",
+        "desc": "Enable Intel apps to recognize and use AVX instructions on M-chip Macs"
+      },
+      "env": {
+        "title": "Environment Variables",
+        "desc": "Configure container environment variables for specific program requirements"
+      },
+      "launchArgs": {
+        "title": "Launch Arguments",
+        "desc": "Add program launch arguments to enable specific features or fix compatibility issues"
+      },
+      "inputPlaceholder": "Enter arguments",
+      "gamePath": {
+        "title": "Game Path",
+        "desc": "Set your game installation path"
+      },
+      "language": {
+        "title": "Language",
+        "desc": "Set Windows system language"
+      }
+    },
+    "rightCard": {
+      "title": "Compatibility Profile",
+      "desc": "Flexible compatibility profiles for different games — from default playable to customized for your preferences. Balance stability and performance with flexible configuration combinations",
+      "plan": {
+        "title": "Compatibility Profile",
+        "desc": "Official profile or customize your own"
+      },
+      "layer": {
+        "title": "Compatibility Layer",
+        "desc": "Official profile or customize your own"
+      },
+      "syncMode": {
+        "title": "Sync Mode",
+        "desc": "Choose Wine's sync mechanism — different modes affect performance and compatibility"
+      },
+      "dinput": {
+        "title": "Dinput Library",
+        "desc": "Decide whether dinput.dll and dinput8.dll prefer game-bundled or Wine built-in versions"
+      }
+    }
+  },
+  "survey": {
+    "title": "Take the Survey",
+    "descPrefix": "Download and experience GameSir Hub Mac client. Play games via Steam download or local import. For more authentic feedback, ",
+    "descHighlight": "we recommend playing for at least 20 minutes before submitting feedback.",
+    "descSuffix": "This survey takes about 3 minutes. Thank you for participating!",
+    "button": "Fill Out Survey"
+  },
+  "feature": {
+    "title": "Feature Preview",
+    "desc": "More features coming in the official release, stay tuned",
+    "epic": {
+      "title": "Epic Multi-Account Management",
+      "desc": "Quickly switch Epic game assets and enjoy different game library content anytime."
+    },
+    "games": {
+      "title": "Massive Game Library, Click to Play",
+      "desc": "Click to play instantly — no installation required, start gaming anytime."
+    },
+    "platform": {
+      "title": "All-in-One Gaming Platform",
+      "desc": "Unlock popular game activation codes and rental services, fully satisfying diverse gamer needs and exploring more gaming content"
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "subtitle": "Subtitle",
+    "logoAlt": "GameSir Hub",
+    "logoText": "GameSir Hub",
+    "headline": {
+      "en": "Mac",
+      "zh": "Can Be a Game Console",
+      "subtitle": "Beta client now available for early access"
+    },
+    "footer": {
+      "copyright": "Copyright 2025 All Rights Reserved.",
+      "company": "Guangzhou Xiaoji Kuaipao Network Technology Co., Ltd.",
+      "address": "Address: Room 1001 & 1003, No.19, Yuancun West Street 2, Tianhe District, Guangzhou",
+      "filings": [
+        {
+          "linkKey": "wenwangwen",
+          "label": "Yue Net Culture [2016] No.575-1561",
+          "showIcon": true
+        },
+        {
+          "linkKey": "icp",
+          "label": "Yue ICP No.10217906-14"
+        },
+        {
+          "linkKey": "gongan",
+          "label": "Public Security Filing No.44010602003042"
+        }
+      ]
+    }
+  },
+  "faqItems": [
+    {
+      "question": "Why is a beta testing approach used?",
+      "answer": "We firmly believe that player feedback is key to improving the product experience. By opening Mac beta testing, we hope everyone can experience the content early, helping us gather authentic feedback and suggestions to continuously refine the product."
+    },
+    {
+      "question": "When will the official version be released?",
+      "answer": "We are working hard to polish the product while ensuring both progress and high-quality user experience. The final decision on whether to extend the beta or release the official GameSir Hub for Mac will be based on test feedback and development progress."
+    },
+    {
+      "question": "How to link a Steam account?",
+      "answer": "After entering the Mac client, click the user avatar on the right side of the top navigation bar to open the profile popup.\nFor first-time Steam linking, click \"Log in to Steam\" and authorize via credentials or QR code.\nTo link additional Steam accounts, go to your profile, find Steam Account Management, click \"Add Account\", and authorize via credentials or QR code."
+    },
+    {
+      "question": "How to import game files?",
+      "answer": "Method 1: Click \"Import Game\" from the sidebar or game library, select \"Add Game Program\" and choose an exe file; or select \"Scan Folder\" to automatically scan for exe files.\nMethod 2: Drag and drop exe files from your device into the client.\nMethod 3: Double-click an exe file on your device.\nAfter importing, the system will automatically parse game information and supports editing game cover, name, and description.\nOnce added, you'll be redirected to the game library. If the imported game isn't found, click the refresh button in the top navigation bar."
+    },
+    {
+      "question": "How to configure emulator compatibility profiles?",
+      "answer": "Official compatibility profiles are prepared for some games (the list of games with dedicated profiles is continuously updated), click Start Game to use the default profile.\nAdvanced users can also flexibly configure custom profiles. After importing game files, go to the game details page, open Win emulator settings to manage emulator containers and dependencies.",
+      "linkText": "the list of games with dedicated profiles is continuously updated"
+    },
+    {
+      "question": "How to contact the GameSir Hub team?",
+      "answer": "To facilitate in-depth communication with players, we've set up a QQ group (Group ID: 1079246543) for this beta. The group provides beta download guides, Q&A support, and feedback collection. Welcome to join!"
+    }
+  ],
+  "userData": {
+    "signature": "Bio"
+  },
+  "userCard": {
+    "accountValue": "Account Value",
+    "gameCount": "Games",
+    "playTime": "Play Time"
+  },
+  "gameCovers": [
+    { "name": "Black Myth: Wukong", "designation": "Action RPG" },
+    { "name": "Elden Ring", "designation": "Open World RPG" },
+    { "name": "Baldur's Gate 3", "designation": "RPG" },
+    { "name": "Cyberpunk 2077", "designation": "Action Adventure" },
+    { "name": "Sekiro", "designation": "Action Adventure" },
+    { "name": "200+", "designation": "" }
+  ],
+  "downloadModal": {
+    "closeLabel": "Close",
+    "tagline": "Mac Can Be a Game Console",
+    "versionBadge": "Beta Version 0.1.0",
+    "downloadBtn": "Download for macOS",
+    "systemReq": "Mac M-series chips only · macOS 13+",
+    "versionLabel": "Version",
+    "fileSizeLabel": "File Size",
+    "fileSizeValue": "~128 MB",
+    "updateDateLabel": "Updated",
+    "updateDateValue": "March 2026",
+    "systemReqLabel": "System Requirements",
+    "communityTitle": "Join Beta Community",
+    "communityDesc": "Join thousands of beta users — be the first to experience new features and help shape the product",
+    "communityBtn": "Join Community",
+    "featureGames": "Massive Game Library",
+    "featureGamesDesc": "Supports hundreds of Mac-compatible games, continuously expanding",
+    "featureSilicon": "Apple Silicon Native",
+    "featureSiliconDesc": "Deep M-series chip optimization, low latency & high frame rate",
+    "featureGamepad": "Gamepad Support",
+    "featureGamepadDesc": "Compatible with mainstream gamepads, plug and play"
+  },
+  "siteTitle": "GameSir Hub",
+  "brandAlt": "GameSir Hub"
+}
