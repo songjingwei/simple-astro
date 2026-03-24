@@ -1,10 +1,12 @@
 import { RainbowButton } from "@/registry/magicui/rainbow-button"
 import { BrandIcon, BrandTextIcon } from "@/components/app/icons"
-import pageText from "@/components/app/page-text.json"
+import { useI18n } from "@/i18n/context"
 
 const navTargetIds = ["version-intro", "survey-feedback", "feature-preview"]
 
 export function AppHeaderSection({ onOpenDownload }) {
+  const { t } = useI18n()
+
   const handleNavClick = (targetId) => {
     const el = document.getElementById(targetId)
     if (el) {
@@ -16,14 +18,14 @@ export function AppHeaderSection({ onOpenDownload }) {
     <header className="app-header">
       <div className="header-inner">
         <div className="header-brand">
-          <img src="/logoo.svg" alt="盖世游戏" className="header-brand-icon" />
+          <img src="/logoo.svg" alt={t.brandAlt} className="header-brand-icon" />
           <BrandTextIcon />
         </div>
         <nav className="header-nav">
-          {pageText.header.nav.map((item, index) => (
+          {t.header.nav.map((item, index) => (
             <div
               className="header-nav-item"
-              key={item}
+              key={index}
               role="button"
               tabIndex={0}
               onClick={() => handleNavClick(navTargetIds[index])}
@@ -41,7 +43,7 @@ export function AppHeaderSection({ onOpenDownload }) {
             variant="outline"
             onClick={onOpenDownload}
           >
-            {pageText.header.downloadButton}
+            {t.header.downloadButton}
           </RainbowButton>
         </div>
       </div>
