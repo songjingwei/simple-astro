@@ -50,8 +50,9 @@ function renderFaqAnswer(item) {
 }
 
 export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload }) {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
   const faqFooter = t.faq.footer
+  const showDomesticFooter = t.showDomesticFooter
 
   return (
     <section className="feature-preview-section" id="feature-preview">
@@ -181,52 +182,54 @@ export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload })
               onDownload={onOpenDownload}
             />
           </div>
-          <div className="faq-bottom-panel">
-            <LaserFlow
-              className="faq-bottom-panel-laser"
-              color="#B2FCFF"
-              horizontalSizing={1.6}
-              verticalSizing={3.7}
-              horizontalBeamOffset={0}
-              verticalBeamOffset={-0.5}
-              wispDensity={3.9}
-              wispSpeed={40}
-              wispIntensity={5}
-              flowSpeed={0.77}
-              flowStrength={0.4}
-              fogIntensity={0.75}
-              fogScale={0.3}
-              fogFallSpeed={0.6}
-              decay={1.1}
-              falloffStart={1.2}
-            />
-            <p className="faq-bottom-panel-copyright">{faqFooter.copyright}</p>
-            <div className="faq-bottom-panel-footer">
-              <div className="faq-bottom-panel-footer-row">
-                {faqFooter.filings.map((filing, index) => (
-                  <div key={filing.label} style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
-                    {filing.showIcon && (
-                      <img src="/wenhuajingying 1.png" alt="" className="faq-bottom-panel-footer-icon" />
-                    )}
-                    <a
-                      href={filingLinks[filing.linkKey]}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{ color: "inherit", textDecoration: "none" }}
-                    >
-                      {filing.label}
-                    </a>
-                    {index < faqFooter.filings.length - 1 && <span className="faq-bottom-panel-footer-sep" />}
-                  </div>
-                ))}
-              </div>
-              <div className="faq-bottom-panel-footer-row">
-                <span>{faqFooter.company}</span>
-                <span className="faq-bottom-panel-footer-sep" />
-                <span>{faqFooter.address}</span>
+          {showDomesticFooter ? (
+            <div className="faq-bottom-panel">
+              <LaserFlow
+                className="faq-bottom-panel-laser"
+                color="#B2FCFF"
+                horizontalSizing={1.6}
+                verticalSizing={3.7}
+                horizontalBeamOffset={0}
+                verticalBeamOffset={-0.5}
+                wispDensity={3.9}
+                wispSpeed={40}
+                wispIntensity={5}
+                flowSpeed={0.77}
+                flowStrength={0.4}
+                fogIntensity={0.75}
+                fogScale={0.3}
+                fogFallSpeed={0.6}
+                decay={1.1}
+                falloffStart={1.2}
+              />
+              <p className="faq-bottom-panel-copyright">{faqFooter.copyright}</p>
+              <div className="faq-bottom-panel-footer">
+                <div className="faq-bottom-panel-footer-row">
+                  {faqFooter.filings.map((filing, index) => (
+                    <div key={filing.label} style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>
+                      {filing.showIcon && (
+                        <img src="/wenhuajingying 1.png" alt="" className="faq-bottom-panel-footer-icon" />
+                      )}
+                      <a
+                        href={filingLinks[filing.linkKey]}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{ color: "inherit", textDecoration: "none" }}
+                      >
+                        {filing.label}
+                      </a>
+                      {index < faqFooter.filings.length - 1 && <span className="faq-bottom-panel-footer-sep" />}
+                    </div>
+                  ))}
+                </div>
+                <div className="faq-bottom-panel-footer-row">
+                  <span>{faqFooter.company}</span>
+                  <span className="faq-bottom-panel-footer-sep" />
+                  <span>{faqFooter.address}</span>
+                </div>
               </div>
             </div>
-          </div>
+          ) : null}
         </section>
       </div>
     </section>

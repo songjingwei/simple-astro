@@ -212,5 +212,8 @@
     "featureGamepadDesc": "Compatible with mainstream gamepads, plug and play"
   },
   "siteTitle": "GameSir Hub",
-  "brandAlt": "GameSir Hub"
+  "brandAlt": "GameSir Hub",
+  "downloadUrl": "#download-intl",
+  "communityUrl": "#community-intl",
+  "showDomesticFooter": false
 }

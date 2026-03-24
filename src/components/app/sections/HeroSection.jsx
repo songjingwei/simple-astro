@@ -98,7 +98,7 @@ export function HeroSection({ onOpenDownload }) {
             <span className="download-button-label">{t.hero.downloadButton}</span>
           </button>
           <a
-            href="https://qun.qq.com/universal-share/share?ac=1&authKey=Rp3w75Bd6K7%2BZ8nWgg8IQrS7rhur1qyXbeehPiQLi8YimvBWPSNLGuq06BXzCAwk&busi_data=eyJncm91cENvZGUiOiIxMDc5MjQ2NTQzIiwidG9rZW4iOiJmWHY5U0NXcWNDZno1dW1xQ1NzeUtPN0o3Rk1NbURSNFZlVjN2Y25MdEUvSnNoQUxRMHlzWWMwZmJGaENZcEg1IiwidWluIjoiMzE1NDc1NTY5NCJ9&data=oLzlFkd2CpiGI5G2ZICajN9SjUWc5etc9Tk7VPetS-1Zz3sRa9Rz9Nf8H5QiHQCoQI-lHvEudh78RzBStOF6Ag&svctype=4&tempid=h5_group_info"
+            href={t.communityUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="download-button-secondary"

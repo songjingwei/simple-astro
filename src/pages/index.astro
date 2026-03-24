@@ -1,9 +1,24 @@
 ---
-import App from '../components/App.jsx';
-import Layout from '../layouts/Layout.astro';
-import '../styles/global.css';
 ---
 
-<Layout title="GameSir Hub">
-	<App client:load />
-</Layout>
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script is:inline>
+      (function () {
+        var lang = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+        var isZhCN = lang === "zh-cn" || lang === "zh-hans" || lang === "zh-hans-cn" || lang === "zh";
+        window.location.replace(isZhCN ? "/zh-cn" : "/en");
+      })();
+    </script>
+    <noscript>
+      <meta http-equiv="refresh" content="0;url=/en" />
+    </noscript>
+  </head>
+  <body style="background:#030014;color:#fff;font-family:system-ui;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0">
+    <p>Redirecting...</p>
+  </body>
+</html>

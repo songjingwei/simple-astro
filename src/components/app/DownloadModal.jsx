@@ -13,6 +13,8 @@ import { useI18n } from "@/i18n/context"
 export function DownloadModal({ onClose }) {
   const { t } = useI18n()
   const dm = t.downloadModal
+  const downloadUrl = t.downloadUrl
+  const communityUrl = t.communityUrl
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -36,9 +38,8 @@ export function DownloadModal({ onClose }) {
 
         <div className="modal-main-action">
           <a
-            href="#"
+            href={downloadUrl}
             className="modal-download-btn"
-            onClick={(e) => e.preventDefault()}
           >
             <AppleIcon />
             <span>{dm.downloadBtn}</span>
@@ -74,10 +75,10 @@ export function DownloadModal({ onClose }) {
           <p className="modal-community-desc">
             {dm.communityDesc}
           </p>
-          <button className="modal-community-btn">
+          <a href={communityUrl} target="_blank" rel="noopener noreferrer" className="modal-community-btn">
             <ModalCommunityIcon />
             {dm.communityBtn}
-          </button>
+          </a>
         </div>
 
         <div className="modal-features">

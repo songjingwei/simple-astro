@@ -5,7 +5,7 @@ import { useI18n } from "@/i18n/context"
 const navTargetIds = ["version-intro", "survey-feedback", "feature-preview"]
 
 export function AppHeaderSection({ onOpenDownload }) {
-  const { t, locale, setLocale } = useI18n()
+  const { t } = useI18n()
 
   const handleNavClick = (targetId) => {
     const el = document.getElementById(targetId)
@@ -38,14 +38,6 @@ export function AppHeaderSection({ onOpenDownload }) {
           ))}
         </nav>
         <div className="header-action">
-          <button
-            type="button"
-            className="lang-switch-btn"
-            onClick={() => setLocale(locale === "zh" ? "en" : "zh")}
-            aria-label="Switch language"
-          >
-            {locale === "zh" ? "EN" : "中"}
-          </button>
           <RainbowButton
             className="header-rainbow-button"
             variant="outline"
