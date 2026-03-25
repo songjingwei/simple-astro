@@ -211,6 +211,10 @@
     "featureGamepad": "Gamepad Support",
     "featureGamepadDesc": "Compatible with mainstream gamepads, plug and play"
   },
+  "bottomBar": {
+    "langSwitch": "CN",
+    "langSwitchHref": "/zh-cn/"
+  },
   "siteTitle": "GameSir Hub",
   "brandAlt": "GameSir Hub",
   "downloadUrl": "#download-intl",

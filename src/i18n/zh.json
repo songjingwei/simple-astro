@@ -211,6 +211,10 @@
     "featureGamepad": "游戏手柄支持",
     "featureGamepadDesc": "兼容主流手柄设备，即插即用"
   },
+  "bottomBar": {
+    "langSwitch": "EN",
+    "langSwitchHref": "/en/"
+  },
   "siteTitle": "盖世游戏",
   "brandAlt": "盖世游戏",
   "downloadUrl": "#download-cn",
