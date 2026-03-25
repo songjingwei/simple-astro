@@ -88,7 +88,23 @@
 
 .header-action {
   display: flex;
+  align-items: center;
   justify-content: flex-end;
+  gap: 16px;
+}
+
+.header-lang-switch {
+  color: #fff;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 20px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.header-lang-switch:hover {
+  opacity: 0.7;
 }
 
 .rainbow-button {

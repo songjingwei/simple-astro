@@ -38,6 +38,9 @@ export function AppHeaderSection({ onOpenDownload }) {
           ))}
         </nav>
         <div className="header-action">
+          <a className="header-lang-switch" href={t.bottomBar.langSwitchHref}>
+            {t.bottomBar.langSwitch}
+          </a>
           <RainbowButton
             className="header-rainbow-button"
             variant="outline"
