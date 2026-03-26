@@ -11,7 +11,7 @@ import {
 import { useI18n } from "@/i18n/context"
 
 export function DownloadModal({ onClose }) {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
   const dm = t.downloadModal
   const downloadUrl = t.downloadUrl
   const communityUrl = t.communityUrl
@@ -26,7 +26,7 @@ export function DownloadModal({ onClose }) {
         <div className="modal-header">
           <div className="modal-brand">
             <BrandIcon />
-            <BrandTextIcon />
+            <BrandTextIcon locale={locale} />
           </div>
           <p className="modal-tagline">{dm.tagline}</p>
         </div>
