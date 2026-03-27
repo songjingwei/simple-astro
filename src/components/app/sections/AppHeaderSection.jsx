@@ -5,7 +5,7 @@ import { useI18n } from "@/i18n/context"
 const navTargetIds = ["version-intro", "survey-feedback", "feature-preview"]
 
 export function AppHeaderSection({ onOpenDownload }) {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
 
   const handleNavClick = (targetId) => {
     const el = document.getElementById(targetId)
@@ -19,7 +19,7 @@ export function AppHeaderSection({ onOpenDownload }) {
       <div className="header-inner">
         <div className="header-brand">
           <img src="/logoo.svg" alt={t.brandAlt} className="header-brand-icon" />
-          <BrandTextIcon />
+          <BrandTextIcon locale={locale} />
         </div>
         <nav className="header-nav">
           {t.header.nav.map((item, index) => (

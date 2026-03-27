@@ -4,7 +4,7 @@
     "downloadButton": "Download"
   },
   "hero": {
-    "title": "GameSir Hub",
+    "title": "GameHub",
     "headline": {
       "en": "Mac",
       "zh": "Can Be a Game Console",
@@ -94,7 +94,7 @@
   },
   "survey": {
     "title": "Take the Survey",
-    "descPrefix": "Download and experience GameSir Hub Mac client. Play games via Steam download or local import. For more authentic feedback, ",
+    "descPrefix": "Download and experience GameHub Mac client. Play games via Steam download or local import. For more authentic feedback, ",
     "descHighlight": "we recommend playing for at least 20 minutes before submitting feedback.",
     "descSuffix": "This survey takes about 3 minutes. Thank you for participating!",
     "button": "Fill Out Survey"
@@ -118,8 +118,8 @@
   "faq": {
     "title": "FAQ",
     "subtitle": "Subtitle",
-    "logoAlt": "GameSir Hub",
-    "logoText": "GameSir Hub",
+    "logoAlt": "GameHub",
+    "logoText": "GameHub",
     "headline": {
       "en": "Mac",
       "zh": "Can Be a Game Console",
@@ -153,7 +153,7 @@
     },
     {
       "question": "When will the official version be released?",
-      "answer": "We are working hard to polish the product while ensuring both progress and high-quality user experience. The final decision on whether to extend the beta or release the official GameSir Hub for Mac will be based on test feedback and development progress."
+      "answer": "We are working hard to polish the product while ensuring both progress and high-quality user experience. The final decision on whether to extend the beta or release the official GameHub for Mac will be based on test feedback and development progress."
     },
     {
       "question": "How to link a Steam account?",
@@ -169,7 +169,7 @@
       "linkText": "the list of games with dedicated profiles is continuously updated"
     },
     {
-      "question": "How to contact the GameSir Hub team?",
+      "question": "How to contact the GameHub team?",
       "answer": "To facilitate in-depth communication with players, we've set up a QQ group (Group ID: 1079246543) for this beta. The group provides beta download guides, Q&A support, and feedback collection. Welcome to join!"
     }
   ],
@@ -215,8 +215,8 @@
     "langSwitch": "CN",
     "langSwitchHref": "/zh-cn/"
   },
-  "siteTitle": "GameSir Hub",
-  "brandAlt": "GameSir Hub",
+  "siteTitle": "GameHub",
+  "brandAlt": "GameHub",
   "downloadUrl": "#download-intl",
   "communityUrl": "#community-intl",
   "showDomesticFooter": false
