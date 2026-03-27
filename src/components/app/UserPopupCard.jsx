@@ -2,8 +2,15 @@ import { InfoIcon } from "@/components/app/icons"
 import { UserLevelBadgeSvg } from "@/components/app/AppPageSectionSvgs"
 import { useI18n } from "@/i18n/context"
 
+function localizeCurrency(value, locale) {
+  if (locale === "en" && value.startsWith("¥")) {
+    return "$" + value.slice(1)
+  }
+  return value
+}
+
 export function UserPopupCard({ user }) {
-  const { t } = useI18n()
+  const { t, locale } = useI18n()
 
   const getLevelColor = (level) => {
     const levelNum = parseInt(level);
@@ -45,7 +52,7 @@ export function UserPopupCard({ user }) {
       </div>
       <div className="user-stats-bar">
         <div className="user-stat-item">
-          <span className="user-stat-value">{user.value}</span>
+          <span className="user-stat-value">{localizeCurrency(user.value, locale)}</span>
           <span className="user-stat-label">
             {t.userCard.accountValue}
             <InfoIcon />
