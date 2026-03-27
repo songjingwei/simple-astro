@@ -24,29 +24,50 @@ import {
 } from "@/components/app/AppPageSectionSvgs"
 
 function renderFaqAnswer(item) {
-  if (!item.linkText) {
-    return item.answer
+  let parts = [item.answer]
+
+  if (item.linkText) {
+    parts = parts.flatMap((part) => {
+      if (typeof part !== "string") return [part]
+      const [before, ...rest] = part.split(item.linkText)
+      if (rest.length === 0) return [part]
+      return [
+        before,
+        <a
+          key="link"
+          href={filingLinks.faqCompatList}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{ color: "#3B82F6", textDecoration: "underline" }}
+        >
+          {item.linkText}
+        </a>,
+        rest.join(item.linkText),
+      ]
+    })
   }
 
-  const [before, after] = item.answer.split(item.linkText)
-  if (before === undefined || after === undefined) {
-    return item.answer
+  if (item.boldTexts) {
+    for (let i = 0; i < item.boldTexts.length; i++) {
+      const boldText = item.boldTexts[i]
+      parts = parts.flatMap((part) => {
+        if (typeof part !== "string") return [part]
+        const [before, ...rest] = part.split(boldText)
+        if (rest.length === 0) return [part]
+        return [
+          before,
+          <strong key={`bold-${i}`} style={{ color: "#fff" }}>{boldText}</strong>,
+          rest.join(boldText),
+        ]
+      })
+    }
   }
 
-  return (
-    <>
-      {before}
-      <a
-        href={filingLinks.faqCompatList}
-        target="_blank"
-        rel="noopener noreferrer"
-        style={{ color: "#3B82F6", textDecoration: "underline" }}
-      >
-        {item.linkText}
-      </a>
-      {after}
-    </>
-  )
+  if (parts.length === 1 && typeof parts[0] === "string") {
+    return parts[0]
+  }
+
+  return <>{parts}</>
 }
 
 export function FeatureFaqSection({ openFaqIndex, onToggleFaq, onOpenDownload }) {
