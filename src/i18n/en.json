@@ -148,29 +148,32 @@
   },
   "faqItems": [
     {
-      "question": "Why is a beta testing approach used?",
-      "answer": "We firmly believe that player feedback is key to improving the product experience. By opening Mac beta testing, we hope everyone can experience the content early, helping us gather authentic feedback and suggestions to continuously refine the product."
+      "question": "Why release a beta version?",
+      "answer": "We consider user feedback essential to improving product quality.\nBy opening early access on macOS, we aim to collect real-world usage insights and continuously refine features and user experience."
     },
     {
       "question": "When will the official version be released?",
-      "answer": "We are working hard to polish the product while ensuring both progress and high-quality user experience. The final decision on whether to extend the beta or release the official GameHub for Mac will be based on test feedback and development progress."
+      "answer": "The product is under active development and optimization.\nThe release timeline will be determined based on beta feedback and development progress. The beta period may be extended if necessary."
     },
     {
-      "question": "How to link a Steam account?",
-      "answer": "After entering the Mac client, click the user avatar on the right side of the top navigation bar to open the profile popup.\nFor first-time Steam linking, click \"Log in to Steam\" and authorize via credentials or QR code.\nTo link additional Steam accounts, go to your profile, find Steam Account Management, click \"Add Account\", and authorize via credentials or QR code."
+      "question": "How do I link a Steam account?",
+      "answer": "After launching the client:\nClick the profile icon in the top-right corner to open the account panel.\nFor first-time linking, select Sign in to Steam and authenticate via credentials or QR code.\nTo add additional accounts, go to Account Center → Steam Account Management → Add Account and authenticate using credentials or QR code.",
+      "boldTexts": ["Sign in to Steam", "Account Center → Steam Account Management → Add Account"]
     },
     {
-      "question": "How to import game files?",
-      "answer": "Method 1: Click \"Import Game\" from the sidebar or game library, select \"Add Game Program\" and choose an exe file; or select \"Scan Folder\" to automatically scan for exe files.\nMethod 2: Drag and drop exe files from your device into the client.\nMethod 3: Double-click an exe file on your device.\nAfter importing, the system will automatically parse game information and supports editing game cover, name, and description.\nOnce added, you'll be redirected to the game library. If the imported game isn't found, click the refresh button in the top navigation bar."
+      "question": "How do I import game files?",
+      "answer": "Three import methods are supported:\n1. Manual import: Click Import Game from the sidebar or library, then select an .exe file or scan a folder.\n2. Drag and drop: Drag an .exe file directly into the client.\n3. Direct execution: Double-click an .exe file on your device.\nAfter import, the system automatically parses game metadata. You can edit the game cover, title, and description.\nIf the game does not appear, click the Refresh button in the top navigation bar.",
+      "boldTexts": ["Manual import", "Drag and drop", "Direct execution"]
     },
     {
-      "question": "How to configure emulator compatibility profiles?",
-      "answer": "Official compatibility profiles are prepared for some games (the list of games with dedicated profiles is continuously updated), click Start Game to use the default profile.\nAdvanced users can also flexibly configure custom profiles. After importing game files, go to the game details page, open Win emulator settings to manage emulator containers and dependencies.",
-      "linkText": "the list of games with dedicated profiles is continuously updated"
+      "question": "How do I configure emulator compatibility settings?",
+      "answer": "Pre-configured compatibility profiles are available for selected games. Launching the game applies the default configuration.\nAdvanced users can customize emulator containers and dependencies via Win Emulator Settings.",
+      "linkText": "the list of games with dedicated profiles (continuously updated)",
+      "boldTexts": ["Win Emulator Settings"]
     },
     {
       "question": "How to contact the GameHub team?",
-      "answer": "To facilitate in-depth communication with players, we've set up a QQ group (Group ID: 1079246543) for this beta. The group provides beta download guides, Q&A support, and feedback collection. Welcome to join!"
+      "answer": "To facilitate in-depth communication with players, we've set up a QQ group (Group ID: 1079246543) for this beta, providing beta download guides, Q&A support, and feedback collection. We've also set up an official WeChat account where we'll share more GameHub news and updates. Welcome to join or follow us!"
     }
   ],
   "userData": {
