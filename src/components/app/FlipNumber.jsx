@@ -76,10 +76,16 @@ export function FlipNumber({ value, className, counting = false }) {
   const chars = value.split("")
 
   return (
-    <span ref={ref} className={className || ""} style={{ display: "inline-flex" }}>
+    <span ref={ref} className={className || ""} style={{ display: "inline-flex", alignItems: "center" }}>
       {chars.map((char, i) => {
         const isDigit = /\d/.test(char)
-        if (!isDigit) return <span key={i}>{char}</span>
+        if (!isDigit) {
+          return (
+            <span key={i} style={{ display: "inline-block", height: "1em", lineHeight: "1em" }}>
+              {char}
+            </span>
+          )
+        }
         const digit = parseInt(char, 10)
         return (
           <span
