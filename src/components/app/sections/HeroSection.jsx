@@ -1,4 +1,3 @@
-import { useEffect, useRef, useState } from "react"
 import { ShowcaseSparkles } from "@/components/ShowcaseSparkles"
 import { Marquee } from "@/registry/magicui/marquee"
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip"
@@ -11,73 +10,15 @@ import {
 } from "@/components/app/constants"
 import {
   ShowcaseAppleOutlineSvg,
-  VideoPlayBtnBgSvg,
-  VideoPlayIconSvg,
 } from "@/components/app/AppPageSectionSvgs"
 import { HeroHeadlineBlock } from "@/components/app/HeroHeadlineBlock"
 import { useI18n } from "@/i18n/context"
 import { useGameCovers } from "@/components/app/constants"
 
 export function HeroSection({ onOpenDownload }) {
-  const { t } = useI18n()
-  const VIDEO_MODAL_CLOSE_MS = 280
-  const [isVideoModalMounted, setIsVideoModalMounted] = useState(false)
-  const [isVideoModalVisible, setIsVideoModalVisible] = useState(false)
-  const modalVideoRef = useRef(null)
-  const closeTimerRef = useRef(null)
-  const heroVideoSrc = "https://www.w3schools.com/html/mov_bbb.mp4"
-  const heroVideoPoster = "/source_image.png"
+  const { t, locale } = useI18n()
   const gameCovers = useGameCovers()
-
-  const openVideoModal = () => {
-    if (closeTimerRef.current) {
-      clearTimeout(closeTimerRef.current)
-      closeTimerRef.current = null
-    }
-    setIsVideoModalMounted(true)
-    requestAnimationFrame(() => {
-      setIsVideoModalVisible(true)
-    })
-  }
-
-  const closeVideoModal = () => {
-    if (modalVideoRef.current) {
-      modalVideoRef.current.pause()
-      modalVideoRef.current.currentTime = 0
-    }
-    setIsVideoModalVisible(false)
-    closeTimerRef.current = setTimeout(() => {
-      setIsVideoModalMounted(false)
-    }, VIDEO_MODAL_CLOSE_MS)
-  }
-
-  useEffect(() => {
-    if (!isVideoModalVisible || !modalVideoRef.current) {
-      return
-    }
-
-    modalVideoRef.current.currentTime = 0
-    modalVideoRef.current.play().catch(() => {})
-
-    const handleKeyDown = (event) => {
-      if (event.key === "Escape") {
-        closeVideoModal()
-      }
-    }
-
-    window.addEventListener("keydown", handleKeyDown)
-    return () => {
-      window.removeEventListener("keydown", handleKeyDown)
-    }
-  }, [isVideoModalVisible])
-
-  useEffect(() => {
-    return () => {
-      if (closeTimerRef.current) {
-        clearTimeout(closeTimerRef.current)
-      }
-    }
-  }, [])
+  const heroImageSrc = locale === "en" ? "/MacBook Air - 2.png" : "/MacBook Air - 3.png"
 
   return (
     <>
@@ -111,26 +52,11 @@ export function HeroSection({ onOpenDownload }) {
           <ShowcaseSparkles />
           <div className="hero-showcase">
             <div className="hero-video-container">
-              <video
+              <img
                 className="hero-video"
-                muted
-                playsInline
-                preload="metadata"
-                poster={heroVideoPoster}
+                src={heroImageSrc}
+                alt={t.hero.videoPlayLabel}
               />
-              <button
-                type="button"
-                className="hero-video-play-btn"
-                onClick={openVideoModal}
-                aria-label={t.hero.videoPlayLabel}
-              >
-                <span className="hero-video-play-btn-inner">
-                  <VideoPlayBtnBgSvg />
-                  <span className="hero-video-play-icon-wrapper">
-                    <VideoPlayIconSvg />
-                  </span>
-                </span>
-              </button>
             </div>
           </div>
         </div>
@@ -222,37 +148,6 @@ export function HeroSection({ onOpenDownload }) {
         </div>
       </section>
 
-      {isVideoModalMounted && (
-        <div
-          className={`video-modal ${isVideoModalVisible ? "is-open" : "is-closing"}`}
-          role="presentation"
-          onClick={closeVideoModal}
-        >
-          <div
-            className={`video-modal-dialog ${isVideoModalVisible ? "is-open" : "is-closing"}`}
-            role="dialog"
-            aria-modal="true"
-            aria-label={t.hero.videoModalLabel}
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              type="button"
-              className="video-modal-close"
-              onClick={closeVideoModal}
-              aria-label={t.hero.videoCloseLabel}
-            >
-              ×
-            </button>
-            <video
-              ref={modalVideoRef}
-              className="video-modal-player"
-              controls
-              playsInline
-              src={heroVideoSrc}
-            />
-          </div>
-        </div>
-      )}
     </>
   )
 }
