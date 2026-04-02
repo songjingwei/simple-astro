@@ -1,4 +1,3 @@
-import { DownloadModal } from "@/components/app/DownloadModal"
 import { AppHeaderSection } from "@/components/app/sections/AppHeaderSection"
 import { CompatSection } from "@/components/app/sections/CompatSection"
 import { FeatureFaqSection } from "@/components/app/sections/FeatureFaqSection"
@@ -7,10 +6,8 @@ import { SurveySection } from "@/components/app/sections/SurveySection"
 
 export function AppPageSections({
   appRef,
-  showDownload,
   openFaqIndex,
   onOpenDownload,
-  onCloseDownload,
   onToggleFaq,
 }) {
   return (
@@ -24,7 +21,6 @@ export function AppPageSections({
         onToggleFaq={onToggleFaq}
         onOpenDownload={onOpenDownload}
       />
-      {/* {showDownload && <DownloadModal onClose={onCloseDownload} />} */}
     </main>
   )
 }
