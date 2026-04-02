@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react"
 import {
   AppleIcon,
   BrandIcon,
@@ -9,12 +10,48 @@ import {
   ModalFeatureGamepadIcon,
 } from "@/components/app/icons"
 import { useI18n } from "@/i18n/context"
+import { fetchLatestVersion } from "@/lib/downloadApi"
+
+function formatFileSize(bytes) {
+  if (!bytes) return null
+  const mb = bytes / 1024 / 1024
+  return mb >= 1 ? `${mb.toFixed(1)} MB` : `${(bytes / 1024).toFixed(1)} KB`
+}
+
+function formatDate(timestamp) {
+  if (!timestamp) return null
+  const d = new Date(timestamp * 1000)
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`
+}
 
 export function DownloadModal({ onClose }) {
   const { t, locale } = useI18n()
   const dm = t.downloadModal
-  const downloadUrl = t.downloadUrl
   const communityUrl = t.communityUrl
+
+  const [versionInfo, setVersionInfo] = useState(null)
+  const [loading, setLoading] = useState(true)
+  const [fetchError, setFetchError] = useState(false)
+
+  useEffect(() => {
+    setLoading(true)
+    setFetchError(false)
+    fetchLatestVersion(locale)
+      .then((info) => {
+        setVersionInfo(info)
+      })
+      .catch(() => {
+        setFetchError(true)
+      })
+      .finally(() => {
+        setLoading(false)
+      })
+  }, [locale])
+
+  const downloadUrl = versionInfo?.downloadUrl || null
+  const displayVersion = versionInfo?.version ? `v${versionInfo.version}` : "Beta 0.1.0"
+  const displayFileSize = versionInfo?.fileSize ? formatFileSize(versionInfo.fileSize) : dm.fileSizeValue
+  const displayDate = versionInfo?.updatedAt ? formatDate(versionInfo.updatedAt) : dm.updateDateValue
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -37,13 +74,26 @@ export function DownloadModal({ onClose }) {
         </div>
 
         <div className="modal-main-action">
-          <a
-            href={downloadUrl}
-            className="modal-download-btn"
-          >
-            <AppleIcon />
-            <span>{dm.downloadBtn}</span>
-          </a>
+          {loading ? (
+            <button className="modal-download-btn modal-download-btn--loading" disabled>
+              <AppleIcon />
+              <span>{dm.downloadBtn}</span>
+            </button>
+          ) : fetchError || !downloadUrl ? (
+            <button className="modal-download-btn modal-download-btn--error" disabled>
+              <AppleIcon />
+              <span>{locale === "zh" ? "获取下载链接失败" : "Failed to get download link"}</span>
+            </button>
+          ) : (
+            <a
+              href={downloadUrl}
+              className="modal-download-btn"
+              download
+            >
+              <AppleIcon />
+              <span>{dm.downloadBtn}</span>
+            </a>
+          )}
           <p className="modal-system-req">{dm.systemReq}</p>
         </div>
 
@@ -52,15 +102,15 @@ export function DownloadModal({ onClose }) {
         <div className="modal-info-grid">
           <div className="modal-info-item">
             <span className="modal-info-label">{dm.versionLabel}</span>
-            <span className="modal-info-value">Beta 0.1.0</span>
+            <span className="modal-info-value">{displayVersion}</span>
           </div>
           <div className="modal-info-item">
             <span className="modal-info-label">{dm.fileSizeLabel}</span>
-            <span className="modal-info-value">{dm.fileSizeValue}</span>
+            <span className="modal-info-value">{displayFileSize}</span>
           </div>
           <div className="modal-info-item">
             <span className="modal-info-label">{dm.updateDateLabel}</span>
-            <span className="modal-info-value">{dm.updateDateValue}</span>
+            <span className="modal-info-value">{displayDate}</span>
           </div>
           <div className="modal-info-item">
             <span className="modal-info-label">{dm.systemReqLabel}</span>
