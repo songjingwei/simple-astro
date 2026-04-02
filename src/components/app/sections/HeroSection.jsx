@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react"
 import { ShowcaseSparkles } from "@/components/ShowcaseSparkles"
 import { Marquee } from "@/registry/magicui/marquee"
 import { AnimatedTooltip } from "@/components/ui/animated-tooltip"
@@ -18,9 +19,18 @@ import { useGameCovers } from "@/components/app/constants"
 export function HeroSection({ onOpenDownload }) {
   const { t, locale } = useI18n()
   const gameCovers = useGameCovers()
+  const [heroImgLoaded, setHeroImgLoaded] = useState(false)
+  const heroImgRef = useRef(null)
   const heroImageSrc = locale === "en"
     ? "/MacBook-2.svg"
     : "/MacBook3.svg"
+
+  useEffect(() => {
+    setHeroImgLoaded(false)
+    if (heroImgRef.current?.complete) {
+      setHeroImgLoaded(true)
+    }
+  }, [heroImageSrc])
 
   return (
     <>
@@ -54,10 +64,17 @@ export function HeroSection({ onOpenDownload }) {
           <ShowcaseSparkles />
           <div className="hero-showcase">
             <div className="hero-video-container">
+              {!heroImgLoaded && (
+                <div className="hero-video-skeleton" />
+              )}
               <img
+                ref={heroImgRef}
                 className="hero-video"
                 src={heroImageSrc}
                 alt={t.hero.videoPlayLabel}
+                onLoad={() => setHeroImgLoaded(true)}
+                onError={() => setHeroImgLoaded(true)}
+                style={{ opacity: heroImgLoaded ? 1 : 0 }}
               />
             </div>
           </div>
