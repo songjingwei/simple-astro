@@ -18,7 +18,9 @@ import { useGameCovers } from "@/components/app/constants"
 export function HeroSection({ onOpenDownload }) {
   const { t, locale } = useI18n()
   const gameCovers = useGameCovers()
-  const heroImageSrc = locale === "en" ? "/macbook-air-2.jpg" : "/macbook-air-3.jpg"
+  const heroImageSrc = locale === "en"
+    ? "https://raw.githubusercontent.com/Li-zikai/simple-astro/main/public/macbook-air-2.jpg"
+    : "https://raw.githubusercontent.com/Li-zikai/simple-astro/main/public/macbook-air-3.jpg"
 
   return (
     <>
