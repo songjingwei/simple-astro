@@ -22,12 +22,13 @@ export function HeroSection({ onOpenDownload }) {
   const [heroImgLoaded, setHeroImgLoaded] = useState(false)
   const heroImgRef = useRef(null)
   const heroImageSrc = locale === "en"
-    ? "/MacBook-2.svg"
-    : "/MacBook3.svg"
+    ? "/MacBook-air2.png"
+    : "/MacBook-air3.png"
 
   useEffect(() => {
     setHeroImgLoaded(false)
-    if (heroImgRef.current?.complete) {
+    const img = heroImgRef.current
+    if (img?.complete && img.naturalWidth > 0) {
       setHeroImgLoaded(true)
     }
   }, [heroImageSrc])
@@ -64,9 +65,10 @@ export function HeroSection({ onOpenDownload }) {
           <ShowcaseSparkles />
           <div className="hero-showcase">
             <div className="hero-video-container">
-              {!heroImgLoaded && (
-                <div className="hero-video-skeleton" />
-              )}
+              <div
+                className="hero-video-skeleton"
+                style={{ opacity: heroImgLoaded ? 0 : 1 }}
+              />
               <img
                 ref={heroImgRef}
                 className="hero-video"
@@ -74,7 +76,6 @@ export function HeroSection({ onOpenDownload }) {
                 alt={t.hero.videoPlayLabel}
                 onLoad={() => setHeroImgLoaded(true)}
                 onError={() => setHeroImgLoaded(true)}
-                style={{ opacity: heroImgLoaded ? 1 : 0 }}
               />
             </div>
           </div>
