@@ -65,10 +65,7 @@ export function HeroSection({ onOpenDownload }) {
           <ShowcaseSparkles />
           <div className="hero-showcase">
             <div className="hero-video-container">
-              <div
-                className="hero-video-skeleton"
-                style={{ opacity: heroImgLoaded ? 0 : 1 }}
-              />
+              {!heroImgLoaded && <div className="hero-video-skeleton" />}
               <img
                 ref={heroImgRef}
                 className="hero-video"
@@ -76,6 +73,7 @@ export function HeroSection({ onOpenDownload }) {
                 alt={t.hero.videoPlayLabel}
                 onLoad={() => setHeroImgLoaded(true)}
                 onError={() => setHeroImgLoaded(true)}
+                style={{ visibility: heroImgLoaded ? "visible" : "hidden" }}
               />
             </div>
           </div>

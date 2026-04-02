@@ -100,8 +100,6 @@
 }
 
 .hero-video {
-  position: relative;
-  z-index: 1;
   width: 100%;
   height: auto;
   display: block;
@@ -113,26 +111,21 @@
   z-index: 2;
   border-radius: 16px;
   pointer-events: none;
-  transition: opacity 0.3s ease;
   background: linear-gradient(
     90deg,
-    rgba(42, 41, 48, 0.9) 0%,
-    rgba(42, 41, 48, 0.9) 30%,
-    rgba(80, 78, 90, 0.9) 50%,
-    rgba(42, 41, 48, 0.9) 70%,
-    rgba(42, 41, 48, 0.9) 100%
+    rgba(42, 41, 48, 0.95) 0%,
+    rgba(42, 41, 48, 0.95) 30%,
+    rgba(75, 73, 85, 0.95) 50%,
+    rgba(42, 41, 48, 0.95) 70%,
+    rgba(42, 41, 48, 0.95) 100%
   );
   background-size: 300% 100%;
   animation: hero-skeleton-shimmer 1.8s ease-in-out infinite;
 }
 
 @keyframes hero-skeleton-shimmer {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 .hero-video-play-btn {
