@@ -99,6 +99,15 @@
   aspect-ratio: 1280 / 832;
 }
 
+.hero-video-container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 50%, rgba(5, 7, 10, 0.95) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
 .hero-video {
   width: 100%;
   height: auto;

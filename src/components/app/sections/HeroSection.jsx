@@ -97,7 +97,7 @@ export function HeroSection({ onOpenDownload }) {
                 <div className="showcase-box-large-media">
                   <img
                     className="showcase-box-large-image"
-                    src="/hero-showcase-right.png"
+                    src={locale === "en" ? "/hero-showcase-right-en.png" : "/hero-showcase-right.png"}
                     alt={t.hero.showcaseImageAlt}
                   />
                 </div>
