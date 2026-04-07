@@ -11,7 +11,7 @@ export function HeroHeadlineBlock({ enText, zhText, subtitle, showDownloadButton
         <span className="hero-headline-zh">{zhText}</span>
       </div>
       <p className="hero-subtitle">{subtitle}</p>
-      {showDownloadButton && (
+      {/* {showDownloadButton && (
         <div className="hero-single-action">
           <button
             type="button"
@@ -22,7 +22,7 @@ export function HeroHeadlineBlock({ enText, zhText, subtitle, showDownloadButton
             <span className="download-button-label">{t.hero.downloadButton}</span>
           </button>
         </div>
-      )}
+      )} */}
     </>
   )
 }
