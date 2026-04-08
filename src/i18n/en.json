@@ -1,6 +1,6 @@
 {
   "header": {
-    "nav": ["Version Info", "Feedback", "Feature Preview"],
+    "nav": ["Version Info", "Feedback"],
     "downloadButton": "Download"
   },
   "hero": {

@@ -2,7 +2,7 @@ import { RainbowButton } from "@/registry/magicui/rainbow-button"
 import { BrandIcon, BrandTextIcon } from "@/components/app/icons"
 import { useI18n } from "@/i18n/context"
 
-const navTargetIds = ["version-intro", "survey-feedback", "feature-preview"]
+const navTargetIds = ["version-intro", "survey-feedback"]
 
 export function AppHeaderSection({ onOpenDownload }) {
   const { t, locale } = useI18n()
